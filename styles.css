@@ -134,6 +134,29 @@ position: relative;
 overflow: hidden;
 }
 
+.cta-button:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.resume-button {
+display: inline-block;
+padding: 1rem 2rem;
+margin-left: 5rem;
+background: linear-gradient(45deg, var(--accent), #27ae60);
+color: white;
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+
+.resume-button:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 30px var(--accent-glow);
+}
+
 /* Skills Section */
 .skills {
 padding: 5rem 5%;
