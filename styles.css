@@ -101,3 +101,122 @@ border: 3px solid var(--accent-glow);
 animation: float 3s ease-in-out infinite;
 filter: grayscale(0.2) contrast(1.1);
 }
+
+@keyframes float {
+0%, 100% { transform: translate(0); }
+50% { transform: translateY(-20px); }
+}
+
+.hero h1 {
+font-size: 4rem;
+margin-bottom: 1.5rem;
+background: linear-gradient(45deg, var(--accent) 30%, #ffffff 70%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.hero p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+opacity: 0.9;
+max-width: 600px;
+}
+
+.cta-button {
+display: inline-block;
+padding: 1rem 2rem;
+background: linear-gradient(45deg, var(--accent), #27ae60);
+color: white;
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+
+/* Skills Section */
+.skills {
+padding: 5rem 5%;
+background: var(--darker-bg);
+}
+
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap:2rem;
+margin-top: 3rem;
+}
+
+.skills-card {
+padding: 2rem;
+border-radius: 15px;
+background: rgba(255, 255, 255, 0.05);
+transition: all 0.3s ease;
+border: 1px solid rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(5px);
+}
+
+.skill-card:hover {
+transform: translateY(-10px);
+border-color: var(--accent);
+box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.skill-card i {
+font-size: 2.5rem;
+color: var(--accent);
+margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+background: var(--darker-bg);
+padding: 3rem 5%;
+text-align: center;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links {
+margin-top: 2rem;
+display: flex;
+justify-content: center;
+gap: 2rem;
+}
+
+.social-links a {
+color: var(--text);
+font-size: 1.5rem;
+transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+color: var(--accent);
+transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    .profile-img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo{
+        font-size: 1.5rem;
+        padding-left: 2rem;
+    }
+}
