@@ -95,8 +95,8 @@ body,
 .project-card,
 .skill-card,
 footer,
-.cta-button,
-.resume-button {
+.git-button,
+.button {
     transition:
         background-color 0.35s ease,
         background 0.35s ease,
@@ -197,7 +197,6 @@ filter: grayscale(0.2) contrast(1.1);
 font-size: 4rem;
 margin-bottom: 1.5rem;
 background: linear-gradient(45deg, var(--accent) 30%, var(--text) 70%);
--webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
 
@@ -208,7 +207,7 @@ opacity: 0.9;
 max-width: 600px;
 }
 
-.cta-button {
+.button {
 display: inline-block;
 padding: 1rem 2rem;
 background: linear-gradient(45deg, var(--accent), var(--cta-grad));
@@ -220,24 +219,7 @@ position: relative;
 overflow: hidden;
 }
 
-.cta-button:hover {
-transform: translateY(-10px);
-box-shadow: 0 10px 30px var(--accent-glow);
-}
-
-.resume-button {
-display: inline-block;
-padding: 1rem 2rem;
-background: linear-gradient(45deg, var(--accent), var(--cta-grad));
-color: var(--text);
-border-radius: 8px;
-text-decoration: none;
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-}
-
-.resume-button:hover {
+.button:hover {
 transform: translateY(-10px);
 box-shadow: 0 10px 30px var(--accent-glow);
 }
@@ -361,6 +343,7 @@ transform: translateY(-4px);
 .git-button {
 display: inline-block;
 padding: 1rem 2rem;
+margin-top: 50px;
 background: linear-gradient(45deg, var(--accent), var(--cta-grad));
 color: var(--text);
 border-radius: 8px;
