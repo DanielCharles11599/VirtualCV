@@ -1,10 +1,16 @@
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
     anchor.addEventListener('click', function (e) {
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        if (!target) return;
+
         e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        target.scrollIntoView({
+            behavior: "smooth"
         });
     });
 });
@@ -39,13 +45,20 @@ projectCards.forEach(card => {
 
 
 const themeSwitch = document.getElementById("theme-switch");
+const logo = document.getElementById("site-logo");
 
-themeSwitch.addEventListener("change", function () {
+themeSwitch.addEventListener("change", () => {
 
-    if (this.checked) {
-        document.body.classList.add("light-mode");
-    } else {
-        document.body.classList.remove("light-mode");
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+
+        logo.src = "Virtual_CV-Logo_Light_Theme.png";
+
     }
+    else{
 
+        logo.src = "Virtual_CV-Logo_Dark_Theme.png";
+
+    }
 });

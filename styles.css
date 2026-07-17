@@ -11,6 +11,7 @@ font-family: 'Segoe UI', sans-serif;
 --darker-bg: #050505;
 --accent: #2ecc71;
 --accent-glow: rgba(46, 204, 113, 0.4);
+--h1-grad: #ffffff;
 --text: #ffffff;
 --h4: rgba(255,255,255,0.7);
 --cta-grad: #27ae60;
@@ -25,6 +26,7 @@ body.light-mode {
 --darker-bg: #ffffff;
 --accent: #2ecc71;
 --accent-glow: rgba(46,204,113,0.25);
+--h1-grad: #838383;
 --text: #222222;
 --h4: #0a0a0a;
 --cta-grad: #27ae60;
@@ -58,7 +60,7 @@ font-size: 1rem;
 display: none;
 }
 
-.toggle-slider{
+.toggle-slider {
 display: block;
 width: 55px;
 height: 28px;
@@ -69,7 +71,7 @@ cursor: pointer;
 transition: 0.3s;
 }
 
-.toggle-slider::before{
+.toggle-slider::before {
 content: "";
 position: absolute;
 width: 22px;
@@ -81,11 +83,11 @@ top: 3px;
 transition: 0.3s;
 }
 
-#theme-switch:checked + .toggle-slider{
+#theme-switch:checked + .toggle-slider {
 background: var(--accent);
 }
 
-#theme-switch:checked + .toggle-slider::before{
+#theme-switch:checked + .toggle-slider::before {
 transform: translateX(27px);
 }
 
@@ -121,12 +123,41 @@ border-bottom: 1px solid var(--nav-border);
 }
 
 .logo {
-font-size: 1.8rem;
-font-weight: 700;
-color: var(--accent);
+display: flex;
+align-items: center;
 text-decoration: none;
 position: relative;
-padding-left: 2.5rem;
+width: 100px;
+height: 100px;
+}
+
+.logo img {
+height: 100px;
+width: auto;
+position: absolute;
+inset: 0;
+transition: opacity 0.35s ease;
+border-radius: 100%;
+}
+
+.logo:hover img {
+box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.logo-dark {
+opacity: 1;
+}
+
+.logo-light {
+opacity: 0;
+}
+
+body.light-mode .logo-dark {
+opacity:0;
+}
+
+body.light-mode .logo-light {
+opacity:1;
 }
 
 .nav-links {
@@ -196,7 +227,8 @@ filter: grayscale(0.2) contrast(1.1);
 .hero h1 {
 font-size: 4rem;
 margin-bottom: 1.5rem;
-background: linear-gradient(45deg, var(--accent) 30%, var(--text) 70%);
+background: linear-gradient(45deg, var(--accent) 30%, var(--h1-grad) 70%);
+-webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
 
@@ -479,6 +511,143 @@ margin-bottom: 1rem;
 .skill-card .fa-star,
 .skill-card .fa-regular.fa-star {
     font-size: 0.9rem;
+}
+
+/* Certifications Section*/
+
+.cert-h3,
+.category-title {
+margin-top: 50px;
+}
+
+.cert-h3 {
+color: var(--accent);
+}
+
+.certifications {
+padding: 6rem 5%;
+background: var(--dark-bg);
+}
+
+.certification-grid {
+margin-top: 3rem;
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+gap: 2rem;
+}
+
+.certification-card {
+padding: 2rem;
+}
+
+.cert-header {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 1.5rem;
+}
+
+.cert-icon {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: var(--accent-glow);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.cert-icon i {
+color: var(--accent);
+font-size: 1.5rem;
+}
+
+.cert-logo {
+height: 55px;
+width: 55px;
+}
+
+.certification-card h3 {
+margin-bottom: 0.25rem;
+}
+
+.certification-card h4 {
+color: var(--accent);
+font-weight: 500;
+}
+
+.certification-card p {
+margin: 1.5rem 0;
+opacity: 0.85;
+}
+
+.cert-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.cert-footer a {
+color: var(--accent);
+text-decoration: none;
+}
+
+.cert-footer a:hover {
+text-decoration: underline;
+}
+
+/* Testimonials Section */
+
+.testimonials {
+padding: 6rem 5%;
+background: var(--darker-bg);
+}
+
+.testimonial-slider {
+margin-top: 3rem;
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
+gap: 2rem;
+}
+
+.testimonial-card {
+padding: 2rem;
+position: relative;
+}
+
+.quote {
+color: var(--accent);
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+font-style: italic;
+line-height: 1.8;
+margin-bottom: 2rem;
+}
+
+.testimonial-author {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.testimonial-author img {
+width: 65px;
+height: 65px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid var(--accent);
+}
+
+.testimonial-author h4 {
+margin-bottom: 0.25rem;
+}
+
+.testimonial-author span {
+opacity: 0.7;
+font-size: 0.9rem;
 }
 
 /* Footer */
