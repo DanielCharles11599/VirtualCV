@@ -43,24 +43,32 @@ projectCards.forEach(card => {
     });
 });
 
-
 // Dark Mode/Light Mode toggle
 const themeSwitch = document.getElementById("theme-switch");
 const logo = document.getElementById("site-logo");
 
-themeSwitch.addEventListener("change", () => {
+function createThemeCircle(x, y) {
+    const circle = document.createElement("div");
 
+    circle.classList.add("theme-transition");
+    circle.style.left = `${x}px`;
+    circle.style.top = `${y}px`;
+
+    document.body.appendChild(circle);
+
+    circle.addEventListener("animationend", () => {
+        circle.remove();
+    });
+}
+
+themeSwitch.addEventListener("change", () => {
     document.body.classList.toggle("light-mode");
 
     if(document.body.classList.contains("light-mode")){
-
         logo.src = "Virtual_CV-Logo_Light_Theme.png";
-
     }
     else{
-
         logo.src = "Virtual_CV-Logo_Dark_Theme.png";
-
     }
 });
 
@@ -247,5 +255,19 @@ async function loadRepositories(){
         </div>
 
         `;
+    });
+}
+
+function createThemeCircle(x, y) {
+    const circle = document.createElement("div");
+
+    circle.className = "theme-transition";
+    circle.style.left = `${x}px`;
+    circle.style.top = `${y}px`;
+
+    document.body.appendChild(circle);
+
+    circle.addEventListener("animationend", () => {
+        circle.remove();
     });
 }
