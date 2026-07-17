@@ -47,30 +47,39 @@ projectCards.forEach(card => {
 const themeSwitch = document.getElementById("theme-switch");
 const logo = document.getElementById("site-logo");
 
-function createThemeCircle(x, y) {
-    const circle = document.createElement("div");
-
-    circle.classList.add("theme-transition");
-    circle.style.left = `${x}px`;
-    circle.style.top = `${y}px`;
-
-    document.body.appendChild(circle);
-
-    circle.addEventListener("animationend", () => {
-        circle.remove();
-    });
-}
-
 themeSwitch.addEventListener("change", () => {
+
+    const rect = document
+        .querySelector(".theme-switch")
+        .getBoundingClientRect();
+
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    document.documentElement.style.setProperty("--theme-x", `${x}px`);
+    document.documentElement.style.setProperty("--theme-y", `${y}px`);
+
+    if (!document.startViewTransition) {
+        toggleTheme();
+        return;
+    }
+
+    document.startViewTransition(() => {
+        toggleTheme();
+    });
+});
+
+function toggleTheme() {
+
     document.body.classList.toggle("light-mode");
 
-    if(document.body.classList.contains("light-mode")){
+    if (document.body.classList.contains("light-mode")) {
         logo.src = "Virtual_CV-Logo_Light_Theme.png";
-    }
-    else{
+    } 
+    else {
         logo.src = "Virtual_CV-Logo_Dark_Theme.png";
     }
-});
+}
 
 
 // Filter for Projects
