@@ -396,6 +396,64 @@ padding: 5rem 5%;
 background: var(--darker-bg);
 }
 
+.project-filters {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 15px;
+margin: 35px 0;
+}
+
+.filter-btn {
+background: transparent;
+color: var(--text);
+border: 1px solid rgba(255,255,255,.2);
+padding: 0.7rem 1.5rem;
+border-radius: 999px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.filter-btn:hover {
+border-color: var(--accent);
+color: var(--accent);
+}
+
+.filter-btn.active {
+background: var(--accent);
+color: white;
+border-color: var(--accent);
+}
+
+.project-card {
+transition: opacity .35s ease, transform .35s ease, max-height .35s ease;
+}
+
+.project-card.hide {
+opacity: 0;
+transform: scale(.95);
+pointer-events: none;
+max-height: 0;
+overflow: hidden;
+margin: 0;
+padding: 0;
+border: none;
+}
+
+.project-count {
+text-align: center;
+margin-bottom: 2rem;
+color: var(--text);
+opacity: 0.75;
+font-size: 0.95rem;
+transition: 0.3s;
+}
+
+.project-count span {
+color: var(--accent);
+font-weight: 600;
+}
+
 .project-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -467,6 +525,7 @@ margin-top: 1rem;
 .project-card.active .arrow {
 transform: rotate(180deg);
 }
+
 
 /* Skills Section */
 .skills {

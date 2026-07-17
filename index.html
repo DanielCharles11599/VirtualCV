@@ -29,6 +29,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#github_dashboard">GitHub Dashboard</a> </li>
         </ul>
 
         <div class="theme-toggle">
@@ -140,9 +141,47 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2>Completed Projects</h2>
+
+        <div class="project-filters">
+
+            <button class="filter-btn active" data-filter="all">
+                <i class="fa-solid fa-desktop"></i>
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="python">
+                <i class="fa-brands fa-python"></i>
+                Python
+            </button>
+
+            <button class="filter-btn" data-filter="java">
+                <i class="fa-brands fa-java"></i>
+                Java
+            </button>
+
+            <button class="filter-btn" data-filter="csharp">
+                <i class="fa-solid fa-hashtag"></i>
+                C#
+            </button>
+
+            <button class="filter-btn" data-filter="cpp">
+                <i class="fa-solid fa-code"></i>
+                C++
+            </button>
+
+            <button class="filter-btn" data-filter="sql">
+                <i class="fa-solid fa-database"></i>
+                SQL
+            </button>
+        </div>
+
+        <p class="project-count">
+            Showing <span id="project-count">8</span> projects
+        </p>
+
         <div class="project-grid">
 
-            <div class="project-card">
+            <div class="project-card" data-language="python">
                 <i class="fa-solid fa-chess skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -164,7 +203,7 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-language="csharp sql">
                 <i class="fa-solid fa-square-check skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -185,7 +224,7 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-language="python">
                 <i class="fa-solid fa-gamepad skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -207,7 +246,7 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-language="python">
                 <i class="fa-solid fa-question skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -228,7 +267,7 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-language="cpp">
                 <i class="fa-solid fa-question skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -249,7 +288,7 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-language="python">
                 <i class="fa-solid fa-house skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -271,7 +310,7 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-language="python">
                 <i class="fa-solid fa-house skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -290,7 +329,8 @@
                         • Regression calculated manually without using any libraries.</p>
                 </div>
             </div>
-            <div class="project-card">
+
+            <div class="project-card" data-language="python">
                 <i class="fa-solid fa-calculator skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -311,7 +351,7 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-language="python">
                 <i class="fa-solid fa-image skill-icon"></i>
                 <button class="project-header">
                     <div>
@@ -885,6 +925,11 @@
             </div>
         </div>
     </section>
+
+
+   <section id="github_dashboard" class="github_dashboard">
+
+   </section>
 
     <!-- Footer -->
     <footer>
