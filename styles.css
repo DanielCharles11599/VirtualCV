@@ -709,6 +709,94 @@ opacity: 0.7;
 font-size: 0.9rem;
 }
 
+/* GitHub Dashboard */
+.github_dashboard {
+padding: 6rem 5%;
+background: var(--dark-bg);
+}
+
+.github-profile {
+display: flex;
+gap: 2rem;
+align-items: center;
+margin-top: 3rem;
+}
+
+.github-profile img {
+width: 140px;
+border-radius: 50%;
+border: 3px solid var(--accent);
+}
+
+.github-meta {
+display: flex;
+flex-wrap: wrap;
+gap: 25px;
+margin-top: 1rem;
+}
+
+.github-meta span {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.heatmap {
+margin-top: 3rem;
+text-align: center;
+}
+
+.heatmap img {
+width: 100%;
+border-radius: 12px;
+}
+
+.github-stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+
+.stat-card {
+text-align: center;
+padding: 2rem;
+}
+
+.stat-card h3 {
+font-size: 2.2rem;
+color: var(--accent);
+}
+
+.repository-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+gap: 2rem;
+margin-top: 2rem;
+}
+
+.repository-card {
+padding: 2rem;
+}
+
+.repository-card h4 {
+color: var(--accent);
+}
+
+.repository-card p {
+margin: 1rem 0;
+opacity: 0.8;
+}
+
+.repository-card a {
+color: var(--accent);
+text-decoration: none;
+}
+
+.repository-card a:hover {
+text-decoration: underline;
+}
+
 /* Footer */
 footer {
 background: var(--darker-bg);

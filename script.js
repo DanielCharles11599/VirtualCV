@@ -151,3 +151,101 @@ function filterProjects(filter){
             `Showing <span id="project-count">${visibleProjects}</span> ${displayName} project${visibleProjects !== 1 ? "s" : ""}`;
     }
 }
+
+
+// GitHub Dashboard
+const username = "DanielCharles11599";
+
+loadGithub();
+
+async function loadGithub(){
+
+    const response =
+        await fetch(
+        `https://api.github.com/users/${username}`);
+
+    const user =
+        await response.json();
+
+    document.getElementById("github-avatar").src =
+        user.avatar_url;
+
+    document.getElementById("github-name").textContent =
+        user.name;
+
+    document.getElementById("github-bio").textContent =
+        user.bio;
+
+    document.getElementById("repo-count").textContent =
+        user.public_repos;
+
+    document.getElementById("followers").textContent =
+        user.followers;
+
+    document.getElementById("following").textContent =
+        user.following;
+
+    document.getElementById("public-repos").textContent =
+        user.public_repos;
+
+    document.getElementById("public-gists").textContent =
+        user.public_gists;
+
+    document.getElementById("followers-stat").textContent =
+        user.followers;
+
+    document.getElementById("following-stat").textContent =
+        user.following;
+
+    document.getElementById("heatmap").src =
+`https://ghchart.rshah.org/${username}`;
+
+    loadRepositories();
+
+}
+
+
+// Recent Repositories
+async function loadRepositories(){
+
+    const response =
+        await fetch(
+`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+
+    const repos =
+        await response.json();
+
+    const grid =
+        document.getElementById("repository-grid");
+
+    repos.forEach(repo=>{
+
+        grid.innerHTML +=`
+
+        <div class="repository-card glass-card">
+
+            <h4>${repo.name}</h4>
+
+            <p>${repo.description || "No description available."}</p>
+
+            <p>
+
+                ⭐ ${repo.stargazers_count}
+                &nbsp;&nbsp;
+
+                🍴 ${repo.forks_count}
+
+            </p>
+
+            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+
+                View Repository
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+        </div>
+
+        `;
+    });
+}

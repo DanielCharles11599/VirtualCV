@@ -928,8 +928,85 @@
 
 
    <section id="github_dashboard" class="github_dashboard">
+        <div class="section-title">
+            <h2>
+                <i class="fa-brands fa-github"></i>
+                GitHub Activity
+            </h2>
 
-   </section>
+            <p>
+                Live information pulled directly from my GitHub profile.
+            </p>
+        </div>
+
+        <!-- Profile -->
+        <div class="github-profile glass-card">
+            <img id="github-avatar">
+            <div>
+                <h3 id="github-name"></h3>
+                <p id="github-bio"></p>
+                <div class="github-meta">
+                    <span>
+                        <i class="fa-solid fa-book"></i>
+                        <span id="repo-count"></span>
+                        Repositories
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-user-group"></i>
+                        <span id="followers"></span>
+                        Followers
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span id="following"></span>
+                        Following
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heatmap -->
+        <div class="heatmap glass-card">
+            <img id="heatmap" alt="Contribution Graph">
+        </div>
+
+        <!-- Statistics -->
+        <div class="github-stats-grid">
+            <div class="stat-card glass-card">
+                <h3 id="public-repos"></h3>
+                <p>Repositories</p>
+            </div>
+
+            <div class="stat-card glass-card">
+                <h3 id="public-gists"></h3>
+                <p>Gists</p>
+            </div>
+
+            <div class="stat-card glass-card">
+                <h3 id="followers-stat"></h3>
+                <p>Followers</p>
+            </div>
+
+            <div class="stat-card glass-card">
+                <h3 id="following-stat"></h3>
+                <p>Following</p>
+            </div>
+        </div>
+
+        <!-- Recent repositories -->
+        <div>
+            <h3 class="category-title">
+                Recent Repositories
+            </h3>
+
+            <div
+                id="repository-grid"
+                class="repository-grid">
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
