@@ -1,1035 +1,2774 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
+
 <head>
+
+    <!-- ======================================================
+        Basic Metadata
+    ======================================================= -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Charles Portfolio</title>
 
-    <!-- Placeholder for Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:,">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <!-- link to css file -->
-    <link rel="stylesheet" href="styles.css">
+    <meta
+        name="description"
+        content="Daniel Charles | Final Year Information Technology Student specialising in Software Development, AI, Machine Learning and System Analysis.">
 
-    <!-- link to fontawesome for inserting social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta
+        name="keywords"
+        content="Daniel Charles, Software Developer, Portfolio, AI, Machine Learning, Java, Python, C#, HTML, CSS, JavaScript">
+
+    <meta
+        name="author"
+        content="Daniel Charles">
+
+    <meta
+        name="theme-color"
+        content="#0a0a0a">
+
+    <meta
+        name="color-scheme"
+        content="dark light">
+
+    <title>
+        Daniel Charles | Software Developer Portfolio
+    </title>
+
+    <!-- ======================================================
+        Open Graph
+    ======================================================= -->
+
+    <meta property="og:title"
+          content="Daniel Charles Portfolio">
+
+    <meta property="og:description"
+          content="Final Year IT Student specialising in Software Development, AI and System Analysis.">
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:image"
+          content="Virtual_CV-Logo_Dark_Theme.png">
+
+    <!-- ======================================================
+        Favicon
+    ======================================================= -->
+
+    <link
+        rel="icon"
+        href="Virtual_CV-Logo_Dark_Theme.png">
+
+    <!-- ======================================================
+        Performance
+    ======================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://cdnjs.cloudflare.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <!-- ======================================================
+        Font Awesome
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+    <!-- ======================================================
+        Stylesheet
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="styles.css">
 
 </head>
 
 <body>
-    <!-- Splash Screen -->
-    <div class="intro">
-        <img src="Virtual_CV-Logo_Dark_Theme.png" class="splash-logo">
-        <h1 class="splash-header">
-            <span class="splash">Daniel</span>
-            <span class="splash">Charles</span>
-        </h1>
-    </div>
+
+<!-- ==========================================================
+    Skip Link
+=========================================================== -->
+
+<a
+    class="skip-link"
+    href="#main-content">
+
+    Skip to content
+
+</a>
+
+<!-- ==========================================================
+    Splash Screen
+=========================================================== -->
+
+<div
+    class="intro"
+    aria-hidden="true">
+
+    <img
+        src="Virtual_CV-Logo_Dark_Theme.png"
+        alt=""
+        class="splash-logo">
+
+    <h1 class="splash-header">
+
+        <span class="splash">
+            Daniel
+        </span>
+
+        <span class="splash">
+            Charles
+        </span>
+
+    </h1>
+
+</div>
+
+<!-- ==========================================================
+    Header
+=========================================================== -->
+
+<header>
+
+<nav
+    class="navbar"
+    aria-label="Primary Navigation">
+
+    <!-- Logo -->
+
+    <a
+        href="#home"
+        class="logo"
+        aria-label="Return to Home">
+
+        <img
+            src="Virtual_CV-Logo_Dark_Theme.png"
+            class="logo-dark"
+            alt="Daniel Charles Logo">
+
+        <img
+            src="Virtual_CV-Logo_Light_Theme.png"
+            class="logo-light"
+            alt="Daniel Charles Logo">
+
+    </a>
 
     <!-- Navigation -->
-    <nav class="navbar">
 
-        <a href="#home" class="logo">
-            <img src="Virtual_CV-Logo_Dark_Theme.png" class="logo-dark">
-            <img src="Virtual_CV-Logo_Light_Theme.png" class="logo-light">
-        </a>
+    <ul class="nav-links">
 
-        
-        <ul class="nav-links">
-            <li><a href="#about_me">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#github_dashboard">GitHub Dashboard</a> </li>
-        </ul>
+        <li>
+            <a href="#about_me">
+                About
+            </a>
+        </li>
 
-        <div class="theme-toggle">
-            <i class="fa-solid fa-moon"></i>
-            <input type="checkbox" id="theme-switch">
-            <label for="theme-switch" class="toggle-slider"></label>
-            <i class="fa-solid fa-sun"></i>
-        </div>
-    </nav>
+        <li>
+            <a href="#projects">
+                Projects
+            </a>
+        </li>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+        <li>
+            <a href="#skills">
+                Skills
+            </a>
+        </li>
+
+        <li>
+            <a href="#certifications">
+                Certifications
+            </a>
+        </li>
+
+        <li>
+            <a href="#testimonials">
+                Testimonials
+            </a>
+        </li>
+
+        <li>
+            <a href="#github_dashboard">
+                GitHub
+            </a>
+        </li>
+
+    </ul>
+
+    <!-- Theme Switch -->
+
+    <div
+        class="theme-toggle"
+        aria-label="Theme Toggle">
+
+        <i class="fa-solid fa-moon"></i>
+
+        <input
+            id="theme-switch"
+            type="checkbox"
+            aria-label="Toggle light mode">
+
+        <label
+            for="theme-switch"
+            class="toggle-slider">
+
+        </label>
+
+        <i class="fa-solid fa-sun"></i>
+
+    </div>
+
+</nav>
+
+</header>
+
+<!-- ==========================================================
+    Main Content
+=========================================================== -->
+
+<main id="main-content">
+
+<!-- ==========================================================
+    Hero
+=========================================================== -->
+
+    <section
+        id="home"
+        class="hero">
+
         <div class="hero-content">
-            <h1>Final Year IT Student</h1>
 
-            <p>Bringing a calm and methodical approach to problem solving.</p>
+            <span class="hero-tag">
 
-            <a href="https://www.linkedin.com/in/daniel-charles-30a1a3217/" class="button">Let's Connect</a>
-            <a href="Daniel_Charles-Resume.pdf" class="button">View my Resume</a>
-        </div>
+                Software Developer
 
-        <div class="hero-image">
-            <img src="Profile Picture.jpg" alt="Profile" class="profile-img">
-        </div>
-    </section>
+            </span>
 
-    <!-- About Me Section -->
-    <section id="about_me" class="about-me">
-        <div class="about-container">
-            <div class="about-header">
-                <h2>About Me</h2>
-                <p>
-                    Learn more about who I am, what motivates me, and the areas I'm
-                    passionate about.
-                </p>
-            </div>
+            <h1>
 
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Hello! I'm Daniel.</h3>
+                Daniel Charles
 
-                    <p>
-                        I am currently a final-year Information Technology student with a
-                        passion for software development, artificial intelligence, and
-                        solving real-world problems through technology.
-                    </p>
-                    
-                    <p>
-                        I enjoy designing software that is efficient, scalable, and easy
-                        to use. My interests include machine
-                        learning, system analysis, and finding efficient ways to analyse data.
-                    </p>
-                    
-                    <p>
-                        Outside of programming, I am an avid gamer who tries to peak behind the curtains to figure out
-                        how things work and interact (sometimes even down to the kernel level). I am fascinated with 
-                        understanding how things work and often spend large amounts of my time watching videos on random topics. 
-                    </p>
-                </div>
+            </h1>
 
-                <div class="about-cards">
-                    <div class="about-card">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <h4>Education</h4>
-                        <p>BSc Information Technology (current)</p>
-                    </div>
-
-                    <div class="about-card">
-                        <i class="fa-solid fa-code"></i>
-                        <h4>Experience</h4>
-                        <p>2+ Years in Web Design<br>
-                            Company Lead on All HubSpot-related projects<br>
-                            5+ Personal Software Projects</p>
-                    </div>
-
-                    <div class="about-card">
-                        <i class="fa-solid fa-brain"></i>
-                        <h4>Interests</h4>
-                        <p>AI, Data Analytics & Software Engineering</p>
-                    </div>
-
-                    <div class="about-card">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <h4>Location</h4>
-                        <p>Potchefstroom, South Africa</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="focus-section">
-                <h3>Currently Focusing On</h3>
-                <div class="focus-tags">
-                    <span>Deep Learning</span>
-                    <span>Neural Networks</span>
-                    <span>System Analysis</span>
-                    <span>Java</span>
-                    <span>Python</span>
-                    <span>Datawarehouses</span>
-                    <span>SQL</span>
-                </div>
-
-                <div>
-                    <a href="https://github.com/DanielCharles11599" class="git-button">View my GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Completed Projects</h2>
-
-        <div class="project-filters">
-
-            <button class="filter-btn active" data-filter="all">
-                <i class="fa-solid fa-desktop"></i>
-                All
-            </button>
-
-            <button class="filter-btn" data-filter="python">
-                <i class="fa-brands fa-python"></i>
-                Python
-            </button>
-
-            <button class="filter-btn" data-filter="java">
-                <i class="fa-brands fa-java"></i>
-                Java
-            </button>
-
-            <button class="filter-btn" data-filter="csharp">
-                <i class="fa-solid fa-hashtag"></i>
-                C#
-            </button>
-
-            <button class="filter-btn" data-filter="cpp">
-                <i class="fa-solid fa-code"></i>
-                C++
-            </button>
-
-            <button class="filter-btn" data-filter="sql">
-                <i class="fa-solid fa-database"></i>
-                SQL
-            </button>
-        </div>
-
-        <p class="project-count">
-            Showing <span id="project-count">8</span> projects
-        </p>
-
-        <div class="project-grid">
-
-            <div class="project-card" data-language="python">
-                <i class="fa-solid fa-chess skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>Chess Bot</h3>
-                        <h4>Language: Python</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        Built an AI chess engine using Minimax with Alpha-Beta pruning.
-                        <br><br>
-                        Key Features<br>
-                        • Intelligent move evaluation.<br>
-                        • Checkmate detection.<br>
-                        • Adjustable search depth.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="csharp sql">
-                <i class="fa-solid fa-square-check skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>CSE Donation and Project Tracker</h3>
-                        <h4>Language: C# (.Net Framework), SQL</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        Collaborated with other students to create a full system to solve the problem of hostels tracking donations and projects.<br><br>
-                        Key Features<br>
-                        • Full database integration.<br>
-                        • Stunning GUI.<br>
-                        • Scalable.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="python">
-                <i class="fa-solid fa-gamepad skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>Weapon Mod: Borderlands 2</h3>
-                        <h4>Language: Python</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        Builds on an existing mod that slows down time when aimiing down the scope.
-                        <br><br>
-                        Key Features<br>
-                        • Modifies existing game files.<br>
-                        • Implemented through PythonSDK which is open-source.<br>
-                        • Changes weapon skin randomly whenever the aim down sight keybind is pressed.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="python">
-                <i class="fa-solid fa-question skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>Who Wants to be a Questionnaire?</h3>
-                        <h4>Language: Python</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        Built a GUI-enabled questionnaire game that uses Python's Turtle library to implement an interactive experience.
-                        <br><br>
-                        Key Features<br>
-                        • Interactive interface.<br>
-                        • Questions are implemented using dictionaries for improved performance.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="cpp">
-                <i class="fa-solid fa-question skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>Who Wants to be a Questionnaire? C++ Edition</h3>
-                        <h4>Language: C++</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        Adapted my previous questionnaire game into C++ and enabled the option to easily change the questions asked.
-                        <br><br>
-                        Key Features<br>
-                        • Completely customizeable.<br>
-                        • Makes use of vector arrays.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="python">
-                <i class="fa-solid fa-house skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>House Price Predictor (Multiple Variables)</h3>
-                        <h4>Language: Python</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        A project built while following DeepLearning.AI's "Supervised Machine Learning: Regression and Classificaton" course.
-                        <br><br>
-                        Key Features<br>
-                        • Data visualization.<br>
-                        • Multiple input variables.<br>
-                        • Uses Scikit Learn.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="python">
-                <i class="fa-solid fa-house skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>House Price Predictor (Single Variable)</h3>
-                        <h4>Language: Python</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        A project built while following DeepLearning.AI's "Supervised Machine Learning: Regression and Classificaton" course.
-                        <br><br>
-                        Key Features<br>
-                        • Regression calculated manually without using any libraries.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="python">
-                <i class="fa-solid fa-calculator skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>Income and Expense Calculator</h3>
-                        <h4>Language: Python</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        Built as an ongoing project while I mastered the Python module offered at NWU.
-                        <br><br>
-                        Key Features<br>
-                        • Scaled with my knowledge.<br>
-                        • Went from a basic math program to including dictionaries, functions, and more as I progressed.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="python">
-                <i class="fa-solid fa-image skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>Image Editor</h3>
-                        <h4>Language: Python</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description<br>
-                        Uses PIL to alter images placed within a specific folder.
-                        <br><br>
-                        Key Features<br>
-                        • Improves both the contrast and sharpens images.<br>
-                        • Works on multiple file types.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2>Technical Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fa-solid fa-comment-nodes"></i>
-                <h3>Programming Languages</h3>
-                <p>Java</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i></p>
-                <p>Python</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i></p>
-                <p>C#</p> 
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i></p>
-                <p>C++</p> 
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-code skill-icon"></i>
-                <h3>Frontend Development</h3>
-                <p>HTML</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>CSS</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>JavaScript</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-server skill-icon"></i>
-                <h3>Backend Development</h3>
-                <p>SQL</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>Oracle</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>MySQL</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>SQL Developer</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i></p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-paintbrush skill-icon"></i>
-                <h3>UI/UX Design</h3>
-                <p>Figma</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>Prototyping</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-
-        <div class="section-title">
-            <h2>Certifications</h2>
-            <p>Professional certifications and completed courses that continue to expand my technical knowledge.</p>
-        </div>
-
-        <div class="cert-category">
-            <h3 class="category-title">
-                <i class="fa-solid fa-code cert-h3"></i>
-                Programming
-            </h3>
-
-            <div class="certification-grid">
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Mimo_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Python AI Developer</h3>
-                            <h4>Mimo</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Developed practical skills in Python programming and applied them to artificial intelligence concepts, including data manipulation, automation, machine learning fundamentals, and building AI-powered applications using modern Python libraries and best practices.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2025</span>
-
-                        <a href="Python AI Developer Certificate.pdf" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Python Intermediate</h3>
-                            <h4>Sololearn</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Strengthened Python programming skills through advanced topics including object-oriented programming, modules, file handling, exception management, decorators, iterators, and working with Python's standard libraries.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2024</span>
-
-                        <a href="https://www.sololearn.com/en/certificates/CC-DHFVQRTP" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Introduction to Python</h3>
-                            <h4>Sololearn</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Learned Python programming fundamentals, including variables, data types, functions, loops, conditionals, collections, and writing clean, readable code to solve practical programming problems.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2024</span>
-
-                        <a href="https://www.sololearn.com/en/certificates/CC-K78DAUNF" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Introduction to SQL</h3>
-                            <h4>Sololearn</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Successfully completed a professional course covering SQL fundamentals.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2025</span>
-
-                        <a href="https://www.sololearn.com/en/certificates/CC-HQ4XM1X5" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Java Intermediate</h3>
-                            <h4>Sololearn</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Expanded core Java knowledge by exploring object-oriented programming, collections, exception handling, file input/output, generics, and advanced programming concepts used in developing scalable Java applications.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2024</span>
-
-                        <a href="https://www.sololearn.com/en/certificates/CC-PXA6USFV" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Introduction to Java</h3>
-                            <h4>Sololearn</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Learned the fundamentals of Java programming, including variables, data types, operators, control structures, methods, object-oriented principles, and writing structured console applications.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2024</span>
-
-                        <a href="https://www.sololearn.com/en/certificates/CC-R9REZPGX" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Introduction to C#</h3>
-                            <h4>Sololearn</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Built a strong understanding of C# programming by learning syntax, classes, methods, inheritance, collections, exception handling, and the principles of object-oriented software development.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2024</span>
-
-                        <a href="https://www.sololearn.com/en/certificates/CC-MRLH0WHK" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Introduction to C++</h3>
-                            <h4>Sololearn</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Gained a foundation in C++ programming through topics including variables, functions, loops, conditional statements, object-oriented programming, pointers, and memory management fundamentals.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2024</span>
-
-                        <a href="https://www.sololearn.com/en/certificates/CC-FYXZALTH" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="cert-category">
-            <h3 class="category-title">
-                <i class="fa-solid fa-users cert-h3"></i>
-                Collaboration & Project Management
-            </h3>
-
-            <div class="certification-grid">
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Atlassian_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Confluence Fundamentals Badge</h3>
-                            <h4>Atlassian</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Demonstrated proficiency in using Confluence to create, organise, and collaborate on documentation, manage team knowledge, structure workspaces, and improve collaboration through shared content and documentation best practices.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2022</span>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Atlassian_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Jira Fundamentals Badge</h3>
-                            <h4>Atlassian</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Learned to manage projects effectively using Jira by creating and tracking issues, planning work with boards, managing workflows, assigning tasks, and supporting Agile project management practices.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2022</span>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Slack_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Slack Analytics</h3>
-                            <h4>Slack</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Learned how to use Slack Analytics to measure workspace engagement, monitor communication trends, evaluate adoption metrics, and use data-driven insights to improve team collaboration and productivity.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2021 (Expired 2023)</span>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Slack_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Manage Projects in Slack</h3>
-                            <h4>Slack</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Explored project management workflows within Slack, including task organisation, workflow automation, collaboration using channels, integrations with productivity tools, and keeping teams aligned throughout project lifecycles.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2021 (Expired 2023)</span>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Slack_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Etiquette & Productivity</h3>
-                            <h4>Slack</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Developed best practices for professional communication in Slack by improving messaging etiquette, organising conversations, reducing information overload, and using productivity features to enhance effective team collaboration.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2021 (Expired 2023)</span>
-                    </div>
-                </div>
-
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Slack_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Slack Connect</h3>
-                            <h4>Slack</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Learned how to successfully navigate Slack to enhance and streamline business communication.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2021 (Expired 2023)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="cert-category">
-            <h3 class="category-title">
-                <i class="fa-solid fa-chart-line cert-h3"></i>
-                Business & Marketing
-            </h3>
-
-            <div class="certification-grid">
-                <div class="certification-card glass-card">
-                    <div class="cert-header">
-
-                        <div class="cert-icon">
-                            <img src="Google_Logo.png" class="cert-logo">
-                        </div>
-
-                        <div>
-                            <h3>Fundamentals of Digital Marketing</h3>
-                            <h4>Google</h4>
-                        </div>
-                    </div>
-
-                    <p>
-                        Completed Google's comprehensive digital marketing programme covering search engine optimisation (SEO), search advertising (SEM), social media marketing, analytics, e-commerce, content strategy, email marketing, and online business growth.
-                    </p>
-
-                    <div class="cert-footer">
-                        <span>2021</span>
-
-                        <a href="The Fundamentals of Digital Marketing Certificate.pdf" target="_blank">
-                            View Credential
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-
-        <div class="section-title">
-            <h2>Testimonials</h2>
-            <p>Feedback from employers, colleagues and collaborators.</p>
-        </div>
-
-        <div class="testimonial-slider">
-            <div class="testimonial-card glass-card">
-                <div class="quote">
-                    <i class="fa-solid fa-quote-left"></i>
-                </div>
-                <p>
-                    I had the privilege of witnessing Daniel Charles's remarkable journey at 1.3 Creative, where his blend of technical prowess and exceptional interpersonal skills left an indelible mark. Daniel joined our digital design agency and HubSpot Solution Partner with a basic understanding of IT, and within just over two years, he metamorphosed into our cornerstone for resolving complex technical challenges and mastering abstract concepts. His journey from a novice to an expert in critical technologies and methodologies is a testament to his dedication and capability.
-
-                    Daniel's technical acumen spans a broad array of platforms and tools, including but not limited to HubSpot, Confluence, Jira, Jira Service Management, WordPress, WooCommerce, Elementor, Google Sheets, and Slack. His expertise is not just theoretical; Daniel holds certifications in HubSpot, Google, Jira, Confluence, and Slack, which he applied with finesse to drive our projects to success. His role was pivotal in managing vast sections of our enterprise application stack, particularly distinguishing himself as the go-to expert for HubSpot-related endeavours.
-
-                    Beyond his technical skills, Daniel excelled in customer engagement, offering deep insights and guidance during the discovery phase with our clients, and demonstrating remarkable diligence and collaboration in the build phase. His ability to work harmoniously with colleagues under the Agile methodology significantly enhanced our project executions and outcomes.
-
-                    Daniel is not only a technically proficient professional but also a person of great character—polite, accommodating, punctual, and diligent. He communicates with clarity and purpose, embodying a consultative approach that combines attentive listening with insightful advice. His strong work ethic, reliability, and the respect he garnered from his peers made him an invaluable asset to our team.
-
-                    The significant void Daniel leaves in our organization speaks volumes of his impact. His contributions have been pivotal to our success, setting a high standard for excellence and teamwork. As we bid him farewell, we do so with best wishes for his future endeavours and with the hope of future collaboration.
-
-                    For any organization looking to enrich their team with a dedicated, innovative, and highly skilled professional who brings a wealth of technical expertise, customer-focused insights, and a proven track record of working effectively under Agile methodologies, Daniel Charles comes with my highest recommendation.
-                </p>
-
-                <div class="testimonial-author">
-                    <a href="https://www.linkedin.com/in/elliot-charles-uk/">
-                        <img src="Elliot Charles Profile Picture.jpg" alt="Employer">
-                    </a>
-                    <div>
-                        <h4>Elliot Charles</h4>
-                        <span>Programme Manager & Senior Business Analyst</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-   <section id="github_dashboard" class="github_dashboard">
-        <div class="section-title">
             <h2>
-                <i class="fa-brands fa-github"></i>
-                GitHub Activity
+
+                Final Year Information Technology Student
+
             </h2>
 
             <p>
-                Live information pulled directly from my GitHub profile.
+
+                Bringing a calm and methodical approach to solving
+                complex technical problems through thoughtful software
+                design, modern development practices, and a growing
+                passion for Artificial Intelligence.
+
             </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    class="button primary-button"
+                    href="Daniel_Charles-Resume.pdf">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    Resume
+
+                </a>
+
+                <a
+                    class="button secondary-button"
+                    href="https://www.linkedin.com/in/daniel-charles-30a1a3217/"
+                    target="_blank"
+                    rel="noopener">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                    Connect
+
+                </a>
+
+            </div>
+
+            <div class="hero-badges">
+
+                <span>
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    Artificial Intelligence
+
+                </span>
+
+                <span>
+
+                    <i class="fa-solid fa-code"></i>
+
+                    Software Development
+
+                </span>
+
+                <span>
+
+                    <i class="fa-solid fa-database"></i>
+
+                    Data Analytics
+
+                </span>
+
+            </div>
+
         </div>
 
-        <!-- Profile -->
-        <div class="github-profile glass-card">
-            <img id="github-avatar">
-            <div>
-                <h3 id="github-name"></h3>
-                <p id="github-bio"></p>
-                <div class="github-meta">
-                    <span>
-                        <i class="fa-solid fa-book"></i>
-                        <span id="repo-count"></span>
-                        Repositories
-                    </span>
+        <div class="hero-image">
 
-                    <span>
-                        <i class="fa-solid fa-user-group"></i>
-                        <span id="followers"></span>
-                        Followers
-                    </span>
+            <img
+                src="Profile Picture.jpg"
+                class="profile-img"
+                alt="Portrait of Daniel Charles"
+                loading="eager"
+                decoding="async">
 
-                    <span>
-                        <i class="fa-solid fa-user-plus"></i>
-                        <span id="following"></span>
-                        Following
-                    </span>
+        </div>
+
+    </section>
+    <!-- ==========================================================
+        About Me
+    =========================================================== -->
+
+    <section
+        id="about_me"
+        class="about-me"
+        aria-labelledby="about-heading">
+
+        <div class="section-container">
+
+            <!-- Section Header -->
+
+            <header class="section-header">
+
+                <span class="section-tag">
+
+                    About Me
+
+                </span>
+
+                <h2 id="about-heading">
+
+                    Passionate About Building Thoughtful Software
+
+                </h2>
+
+                <p>
+
+                    I'm driven by curiosity, continuous learning and a
+                    genuine passion for understanding how technology works.
+                    Whether I'm designing software, exploring artificial
+                    intelligence or studying operating systems, I enjoy
+                    solving problems through logical thinking and well-
+                    engineered solutions.
+
+                </p>
+
+            </header>
+
+            <!-- Main About Content -->
+
+            <div class="about-layout">
+
+                <!-- Left Column -->
+
+                <article class="about-story">
+
+                    <h3>
+
+                        Hello, I'm Daniel.
+
+                    </h3>
+
+                    <p>
+
+                        I am currently completing my final year of a
+                        Bachelor of Science in Information Technology,
+                        where I have developed a strong foundation in
+                        software engineering, algorithms, databases,
+                        artificial intelligence and systems analysis.
+
+                    </p>
+
+                    <p>
+
+                        My greatest motivation is understanding how things
+                        work beneath the surface. Whether learning a new
+                        programming language, analysing complex software,
+                        experimenting with AI models or investigating low-
+                        level operating system behaviour, I enjoy breaking
+                        problems into manageable pieces before designing
+                        elegant solutions.
+
+                    </p>
+
+                    <p>
+
+                        Throughout my studies and professional experience I
+                        have continually sought opportunities to expand my
+                        knowledge beyond the classroom. I enjoy building
+                        personal projects that challenge me to learn new
+                        technologies while reinforcing software engineering
+                        principles and modern development practices.
+
+                    </p>
+
+                    <p>
+
+                        Outside of software development I enjoy gaming,
+                        researching emerging technologies and watching
+                        technical talks that deepen my understanding of
+                        computer science. Curiosity has always been one of
+                        my greatest strengths and continues to shape the
+                        way I learn and solve problems.
+
+                    </p>
+
+                </article>
+
+                <!-- Right Column -->
+
+                <aside
+                    class="about-sidebar"
+                    aria-label="Professional Summary">
+
+                    <!-- Education -->
+
+                    <article class="about-card">
+
+                        <div class="about-card-icon">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+
+                                Education
+
+                            </h3>
+
+                            <p>
+
+                                Bachelor of Science<br>
+                                Information Technology
+
+                            </p>
+
+                            <span>
+
+                                Final Year Student
+
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                    <!-- Experience -->
+
+                    <article class="about-card">
+
+                        <div class="about-card-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+
+                                Experience
+
+                            </h3>
+
+                            <p>
+
+                                Professional Web Development<br>
+                                Software Projects<br>
+                                Business Solutions
+
+                            </p>
+
+                            <span>
+
+                                5+ Personal Projects
+
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                    <!-- Interests -->
+
+                    <article class="about-card">
+
+                        <div class="about-card-icon">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+
+                                Technical Interests
+
+                            </h3>
+
+                            <p>
+
+                                Artificial Intelligence<br>
+                                Machine Learning<br>
+                                Software Engineering
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- Location -->
+
+                    <article class="about-card">
+
+                        <div class="about-card-icon">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+
+                                Based In
+
+                            </h3>
+
+                            <p>
+
+                                Potchefstroom<br>
+                                South Africa
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </aside>
+
+            </div>
+
+            <!-- Current Focus -->
+
+            <section
+                class="focus-section"
+                aria-labelledby="focus-heading">
+
+                <header>
+
+                    <h3 id="focus-heading">
+
+                        Current Areas of Focus
+
+                    </h3>
+
+                    <p>
+
+                        Technologies and disciplines I am actively
+                        developing through coursework, certifications
+                        and personal software projects.
+
+                    </p>
+
+                </header>
+
+                <div class="focus-tags">
+
+                    <span>Artificial Intelligence</span>
+
+                    <span>Machine Learning</span>
+
+                    <span>Deep Learning</span>
+
+                    <span>Neural Networks</span>
+
+                    <span>Java</span>
+
+                    <span>Python</span>
+
+                    <span>C#</span>
+
+                    <span>C++</span>
+
+                    <span>SQL</span>
+
+                    <span>Data Warehousing</span>
+
+                    <span>System Analysis</span>
+
+                    <span>Web Development</span>
+
                 </div>
-            </div>
+
+                <!-- Statistics -->
+
+                <div class="about-stats">
+
+                    <article class="stat-card">
+
+                        <h3>
+
+                            15+
+
+                        </h3>
+
+                        <p>
+
+                            Professional Certifications
+
+                        </p>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <h3>
+
+                            9+
+
+                        </h3>
+
+                        <p>
+
+                            Completed Software Projects
+
+                        </p>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <h3>
+
+                            5
+
+                        </h3>
+
+                        <p>
+
+                            Programming Languages
+
+                        </p>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <h3>
+
+                            100%
+
+                        </h3>
+
+                        <p>
+
+                            Commitment to Continuous Learning
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="about-actions">
+
+                    <a
+                        href="Daniel_Charles-Resume.pdf"
+                        class="button primary-button">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        Resume
+
+                    </a>
+
+                    <a
+                        href="https://github.com/DanielCharles11599"
+                        target="_blank"
+                        rel="noopener"
+                        class="button secondary-button">
+
+                        <i class="fa-brands fa-github"></i>
+
+                        GitHub
+
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/daniel-charles-30a1a3217/"
+                        target="_blank"
+                        rel="noopener"
+                        class="button secondary-button">
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                        LinkedIn
+
+                    </a>
+
+                </div>
+
+            </section>
+
         </div>
 
-        <!-- Heatmap -->
-        <div class="heatmap glass-card">
-            <img id="heatmap" alt="Contribution Graph">
-        </div>
-
-        <!-- Statistics -->
-        <div class="github-stats-grid">
-            <div class="stat-card glass-card">
-                <h3 id="public-repos"></h3>
-                <p>Repositories</p>
-            </div>
-
-            <div class="stat-card glass-card">
-                <h3 id="public-gists"></h3>
-                <p>Gists</p>
-            </div>
-
-            <div class="stat-card glass-card">
-                <h3 id="followers-stat"></h3>
-                <p>Followers</p>
-            </div>
-
-            <div class="stat-card glass-card">
-                <h3 id="following-stat"></h3>
-                <p>Following</p>
-            </div>
-        </div>
-
-        <!-- Recent repositories -->
-        <div>
-            <h3 class="category-title">
-                Recent Repositories
-            </h3>
-
-            <div
-                id="repository-grid"
-                class="repository-grid">
-            </div>
-        </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Daniel Charles. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/DanielCharles11599"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/daniel-charles-30a1a3217/"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-    </footer>
+    <!-- ==========================================================
+        Projects
+    =========================================================== -->
 
-    <!-- link to javascript file -->
+    <section
+        id="projects"
+        class="projects"
+        aria-labelledby="projects-heading">
+
+        <div class="section-container">
+
+            <!-- Section Header -->
+
+            <header class="section-header">
+
+                <span class="section-tag">
+
+                    Portfolio
+
+                </span>
+
+                <h2 id="projects-heading">
+
+                    Featured Software Projects
+
+                </h2>
+
+                <p>
+
+                    A selection of software projects demonstrating
+                    experience in application development, artificial
+                    intelligence, databases, desktop applications and
+                    problem solving.
+
+                </p>
+
+            </header>
+
+            <!-- ==================================================
+                Filters
+            =================================================== -->
+
+            <nav
+                class="project-filters"
+                aria-label="Project Filters">
+
+                <button
+                    class="filter-btn active"
+                    data-filter="all">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    All
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="python">
+
+                    <i class="fa-brands fa-python"></i>
+
+                    Python
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="java">
+
+                    <i class="fa-brands fa-java"></i>
+
+                    Java
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="csharp">
+
+                    <i class="fa-solid fa-hashtag"></i>
+
+                    C#
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="cpp">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    C++
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="sql">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    SQL
+
+                </button>
+
+            </nav>
+
+            <p class="project-count">
+
+                Showing
+
+                <strong id="project-count">
+
+                    9
+
+                </strong>
+
+                projects
+
+            </p>
+
+            <!-- ==================================================
+                Project Grid
+            =================================================== -->
+
+            <div class="project-grid">
+                <article
+                class="project-card"
+                data-language="python">
+
+                <button class="project-header">
+
+                    <div class="project-title">
+
+                        <i class="fa-solid fa-chess project-icon"></i>
+
+                        <div>
+
+                            <h3>Chess Bot</h3>
+
+                            <span class="project-category">
+
+                                Artificial Intelligence
+
+                            </span>
+
+                            <p class="project-tech">
+
+                                Python • Minimax • Alpha-Beta Pruning
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down arrow"></i>
+
+                </button>
+
+                <div class="project-content">
+
+                    <p>
+
+                        Built an AI-powered chess engine capable of evaluating
+                        board positions using the Minimax algorithm with
+                        Alpha-Beta pruning for efficient decision making.
+
+                    </p>
+
+                    <h4>Highlights</h4>
+
+                    <ul>
+
+                        <li>Intelligent move evaluation</li>
+
+                        <li>Adjustable search depth</li>
+
+                        <li>Checkmate detection</li>
+
+                    </ul>
+
+                    <div class="project-links">
+
+                        <a href="#">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            Source
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+            <article
+        class="project-card"
+        data-language="csharp sql">
+
+        <button class="project-header">
+
+            <div class="project-title">
+
+                <i class="fa-solid fa-square-check project-icon"></i>
+
+                <div>
+
+                    <h3>
+
+                        CSE Donation & Project Tracker
+
+                    </h3>
+
+                    <span class="project-category">
+
+                        Desktop Application
+
+                    </span>
+
+                    <p class="project-tech">
+
+                        C# • SQL Server • .NET
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="project-content">
+
+            <p>
+
+                Developed as part of a university team project to
+                streamline donation and project tracking for student
+                residences through an integrated desktop application.
+
+            </p>
+
+            <h4>Highlights</h4>
+
+            <ul>
+
+                <li>Database integration</li>
+
+                <li>Modern desktop interface</li>
+
+                <li>Scalable architecture</li>
+
+            </ul>
+
+            <div class="project-links">
+
+                <a href="#">
+
+                    <i class="fa-brands fa-github"></i>
+
+                    Source
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+    <article
+        class="project-card"
+        data-language="python">
+
+        <button class="project-header">
+
+            <div class="project-title">
+
+                <i class="fa-solid fa-gamepad project-icon"></i>
+
+                <div>
+
+                    <h3>
+
+                        Borderlands 2 Weapon Mod
+
+                    </h3>
+
+                    <span class="project-category">
+
+                        Game Modding
+
+                    </span>
+
+                    <p class="project-tech">
+
+                        Python • PythonSDK
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="project-content">
+
+            <p>
+
+                Extended an existing Borderlands 2 mod by introducing
+                new gameplay functionality and dynamic weapon skin
+                randomisation.
+
+            </p>
+
+            <h4>Highlights</h4>
+
+            <ul>
+
+                <li>PythonSDK integration</li>
+
+                <li>Runtime game modification</li>
+
+                <li>Random weapon skins</li>
+
+            </ul>
+
+            <div class="project-links">
+
+                <a href="#">
+
+                    <i class="fa-brands fa-github"></i>
+
+                    Source
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+    <article
+        class="project-card"
+        data-language="python">
+
+        <button class="project-header">
+
+            <div class="project-title">
+
+                <i class="fa-solid fa-question project-icon"></i>
+
+                <div>
+
+                    <h3>
+
+                        Questionnaire Game
+
+                    </h3>
+
+                    <span class="project-category">
+
+                        Desktop Application
+
+                    </span>
+
+                    <p class="project-tech">
+
+                        Python • Turtle Graphics
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="project-content">
+
+            <p>
+
+                Interactive quiz application built using Python's Turtle
+                graphics library with configurable question sets.
+
+            </p>
+
+            <h4>Highlights</h4>
+
+            <ul>
+
+                <li>GUI interface</li>
+
+                <li>Dictionary-based questions</li>
+
+                <li>Reusable architecture</li>
+
+            </ul>
+
+            <div class="project-links">
+
+                <a href="#">
+
+                    <i class="fa-brands fa-github"></i>
+
+                    Source
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+    <article
+        class="project-card"
+        data-language="cpp">
+
+        <button class="project-header">
+
+            <div class="project-title">
+
+                <i class="fa-solid fa-code project-icon"></i>
+
+                <div>
+
+                    <h3>
+
+                        Questionnaire Game (C++)
+
+                    </h3>
+
+                    <span class="project-category">
+
+                        Desktop Application
+
+                    </span>
+
+                    <p class="project-tech">
+
+                        C++ • STL • Vectors
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="project-content">
+
+            <p>
+
+                A C++ adaptation of the original questionnaire project,
+                redesigned to make question management more flexible and
+                maintainable.
+
+            </p>
+
+            <h4>Highlights</h4>
+
+            <ul>
+
+                <li>Vector containers</li>
+
+                <li>Reusable question system</li>
+
+                <li>Object-oriented design</li>
+
+            </ul>
+
+            <div class="project-links">
+
+                <a href="#">
+
+                    <i class="fa-brands fa-github"></i>
+
+                    Source
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+    <!-- ==================================================
+        Project Card 6
+    =================================================== -->
+
+    <article
+        class="project-card"
+        data-language="python">
+
+        <button class="project-header">
+
+            <div class="project-title">
+
+                <i class="fa-solid fa-house project-icon"></i>
+
+                <div>
+
+                    <h3>
+
+                        House Price Predictor (Multiple Variables)
+
+                    </h3>
+
+                    <span class="project-category">
+
+                        Machine Learning
+
+                    </span>
+
+                    <p class="project-tech">
+
+                        Python • Scikit-Learn • Regression
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="project-content">
+
+            <p>
+
+                Developed while completing DeepLearning.AI's
+                <em>Supervised Machine Learning: Regression and Classification</em>
+                course. The model predicts house prices using multiple
+                property characteristics.
+
+            </p>
+
+            <h4>Highlights</h4>
+
+            <ul>
+
+                <li>Multiple feature regression</li>
+
+                <li>Data visualisation</li>
+
+                <li>Scikit-Learn implementation</li>
+
+            </ul>
+
+            <div class="project-links">
+
+                <a href="#">
+                    <i class="fa-brands fa-github"></i>
+                    Source
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ==================================================
+        Project Card 7
+    =================================================== -->
+
+    <article
+        class="project-card"
+        data-language="python">
+
+        <button class="project-header">
+
+            <div class="project-title">
+
+                <i class="fa-solid fa-chart-line project-icon"></i>
+
+                <div>
+
+                    <h3>
+
+                        House Price Predictor (Single Variable)
+
+                    </h3>
+
+                    <span class="project-category">
+
+                        Machine Learning
+
+                    </span>
+
+                    <p class="project-tech">
+
+                        Python • Linear Regression
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="project-content">
+
+            <p>
+
+                An introductory machine learning project where the
+                regression algorithm was implemented manually to gain a
+                deeper understanding of the mathematics behind linear
+                regression.
+
+            </p>
+
+            <h4>Highlights</h4>
+
+            <ul>
+
+                <li>Regression from first principles</li>
+
+                <li>No machine learning libraries</li>
+
+                <li>Mathematical implementation</li>
+
+            </ul>
+
+            <div class="project-links">
+
+                <a href="#">
+                    <i class="fa-brands fa-github"></i>
+                    Source
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ==================================================
+        Project Card 8
+    =================================================== -->
+
+    <article
+        class="project-card"
+        data-language="python">
+
+        <button class="project-header">
+
+            <div class="project-title">
+
+                <i class="fa-solid fa-calculator project-icon"></i>
+
+                <div>
+
+                    <h3>
+
+                        Income & Expense Calculator
+
+                    </h3>
+
+                    <span class="project-category">
+
+                        Personal Finance
+
+                    </span>
+
+                    <p class="project-tech">
+
+                        Python • Dictionaries • Functions
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="project-content">
+
+            <p>
+
+                An evolving project that expanded alongside my Python
+                studies, gradually introducing increasingly advanced
+                programming concepts as my knowledge developed.
+
+            </p>
+
+            <h4>Highlights</h4>
+
+            <ul>
+
+                <li>Progressive feature development</li>
+
+                <li>Dictionary-based storage</li>
+
+                <li>Modular function design</li>
+
+            </ul>
+
+            <div class="project-links">
+
+                <a href="#">
+                    <i class="fa-brands fa-github"></i>
+                    Source
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ==================================================
+        Project Card 9
+    =================================================== -->
+
+    <article
+        class="project-card"
+        data-language="python">
+
+        <button class="project-header">
+
+            <div class="project-title">
+
+                <i class="fa-solid fa-image project-icon"></i>
+
+                <div>
+
+                    <h3>
+
+                        Image Enhancement Utility
+
+                    </h3>
+
+                    <span class="project-category">
+
+                        Image Processing
+
+                    </span>
+
+                    <p class="project-tech">
+
+                        Python • Pillow (PIL)
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="project-content">
+
+            <p>
+
+                Created a batch image-processing utility capable of
+                automatically enhancing images within a folder by
+                applying sharpening and contrast adjustments.
+
+            </p>
+
+            <h4>Highlights</h4>
+
+            <ul>
+
+                <li>Batch processing</li>
+
+                <li>Automatic enhancement</li>
+
+                <li>Multiple image formats</li>
+
+            </ul>
+
+            <div class="project-links">
+
+                <a href="#">
+                    <i class="fa-brands fa-github"></i>
+                    Source
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    </div>
+
+    <!-- Call To Action -->
+
+    <div class="projects-footer">
+
+        <p>
+
+            New projects are continually being added as I explore new
+            technologies and complete university, professional and
+            personal software development work.
+
+        </p>
+
+        <a
+            href="https://github.com/DanielCharles11599"
+            target="_blank"
+            rel="noopener"
+            class="button secondary-button">
+
+            <i class="fa-brands fa-github"></i>
+
+            View All Projects
+
+        </a>
+
+    </div>
+
+    </div>
+
+    </section>
+
+    <!-- ==========================================================
+        Skills
+    =========================================================== -->
+
+    <section
+        id="skills"
+        class="skills"
+        aria-labelledby="skills-heading">
+
+        <div class="section-container">
+
+            <!-- Section Header -->
+
+            <header class="section-header">
+
+                <span class="section-tag">
+
+                    Technical Skills
+
+                </span>
+
+                <h2 id="skills-heading">
+
+                    Technologies & Expertise
+
+                </h2>
+
+                <p>
+
+                    Throughout my university studies, professional
+                    experience and personal software projects, I have
+                    developed experience across multiple programming
+                    languages, frameworks and development tools.
+
+                </p>
+
+            </header>
+
+            <!-- Skills Grid -->
+
+            <div class="skills-grid">
+
+                <!-- ==================================================
+                    Programming Languages
+                =================================================== -->
+
+                <article class="skill-card">
+
+                    <div class="skill-header">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <div>
+
+                            <h3>
+
+                                Programming Languages
+
+                            </h3>
+
+                            <span>
+
+                                Primary Development Languages
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag expert">
+
+                            Java
+
+                        </span>
+
+                        <span class="skill-tag expert">
+
+                            Python
+
+                        </span>
+
+                        <span class="skill-tag expert">
+
+                            C#
+
+                        </span>
+
+                        <span class="skill-tag advanced">
+
+                            C++
+
+                        </span>
+
+                        <span class="skill-tag advanced">
+
+                            SQL
+
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <!-- ==================================================
+                    Frontend
+                =================================================== -->
+
+                <article class="skill-card">
+
+                    <div class="skill-header">
+
+                        <i class="fa-solid fa-laptop-code"></i>
+
+                        <div>
+
+                            <h3>
+
+                                Frontend Development
+
+                            </h3>
+
+                            <span>
+
+                                Responsive Web Development
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag advanced">
+
+                            HTML5
+
+                        </span>
+
+                        <span class="skill-tag advanced">
+
+                            CSS3
+
+                        </span>
+
+                        <span class="skill-tag intermediate">
+
+                            JavaScript
+
+                        </span>
+
+                        <span class="skill-tag intermediate">
+
+                            Responsive Design
+
+                        </span>
+
+                        <span class="skill-tag intermediate">
+
+                            Accessibility
+
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <!-- ==================================================
+                    Backend
+                =================================================== -->
+
+                <article class="skill-card">
+
+                    <div class="skill-header">
+
+                        <i class="fa-solid fa-server"></i>
+
+                        <div>
+
+                            <h3>
+
+                                Databases
+
+                            </h3>
+
+                            <span>
+
+                                Database Design & Querying
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag advanced">
+
+                            SQL
+
+                        </span>
+
+                        <span class="skill-tag advanced">
+
+                            Oracle SQL
+
+                        </span>
+
+                        <span class="skill-tag intermediate">
+
+                            MySQL
+
+                        </span>
+
+                        <span class="skill-tag expert">
+
+                            SQL Developer
+
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <!-- ==================================================
+                    AI
+                =================================================== -->
+
+                <article class="skill-card">
+
+                    <div class="skill-header">
+
+                        <i class="fa-solid fa-brain"></i>
+
+                        <div>
+
+                            <h3>
+
+                                Artificial Intelligence
+
+                            </h3>
+
+                            <span>
+
+                                Machine Learning Fundamentals
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag intermediate">
+
+                            Machine Learning
+
+                        </span>
+
+                        <span class="skill-tag intermediate">
+
+                            Deep Learning
+
+                        </span>
+
+                        <span class="skill-tag intermediate">
+
+                            Neural Networks
+
+                        </span>
+
+                        <span class="skill-tag intermediate">
+
+                            Scikit-Learn
+
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <!-- ==================================================
+                    Development Tools
+                =================================================== -->
+
+                <article class="skill-card">
+
+                    <div class="skill-header">
+
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                        <div>
+
+                            <h3>
+
+                                Development Tools
+
+                            </h3>
+
+                            <span>
+
+                                Daily Workflow
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">
+
+                            Git
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            GitHub
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            VS Code
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            Visual Studio
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            IntelliJ IDEA
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            Figma
+
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <!-- ==================================================
+                    Professional Tools
+                =================================================== -->
+
+                <article class="skill-card">
+
+                    <div class="skill-header">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <div>
+
+                            <h3>
+
+                                Professional Platforms
+
+                            </h3>
+
+                            <span>
+
+                                Collaboration & Project Management
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">
+
+                            Jira
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            Confluence
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            Slack
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            HubSpot
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            WordPress
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            WooCommerce
+
+                        </span>
+
+                        <span class="skill-tag">
+
+                            Elementor
+
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <!-- Bottom Summary -->
+
+            <div class="skills-summary glass-card">
+
+                <div class="summary-item">
+
+                    <h3>
+
+                        5+
+
+                    </h3>
+
+                    <p>
+
+                        Programming Languages
+
+                    </p>
+
+                </div>
+
+                <div class="summary-item">
+
+                    <h3>
+
+                        15+
+
+                    </h3>
+
+                    <p>
+
+                        Professional Certifications
+
+                    </p>
+
+                </div>
+
+                <div class="summary-item">
+
+                    <h3>
+
+                        9+
+
+                    </h3>
+
+                    <p>
+
+                        Software Projects
+
+                    </p>
+
+                </div>
+
+                <div class="summary-item">
+
+                    <h3>
+
+                        Always
+
+                    </h3>
+
+                    <p>
+
+                        Learning Something New
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================================
+        Testimonials
+    =========================================================== -->
+
+    <section
+        id="testimonials"
+        class="testimonials"
+        aria-labelledby="testimonials-heading">
+
+        <div class="section-container">
+
+            <!-- Section Header -->
+
+            <header class="section-header">
+
+                <span class="section-tag">
+
+                    Recommendations
+
+                </span>
+
+                <h2 id="testimonials-heading">
+
+                    Professional Testimonials
+
+                </h2>
+
+                <p>
+
+                    Feedback from managers and colleagues who have worked
+                    alongside me in professional environments.
+
+                </p>
+
+            </header>
+
+            <!-- Featured Testimonial -->
+
+            <article class="testimonial-card glass-card">
+
+                <div class="testimonial-top">
+
+                    <img
+                        src="Elliot Charles Profile Picture.jpg"
+                        alt="Elliot Charles">
+
+                    <div>
+
+                        <h3>
+
+                            Elliot Charles
+
+                        </h3>
+
+                        <p>
+
+                            Programme Manager &
+                            Senior Business Analyst
+
+                        </p>
+
+                        <a
+                            href="https://www.linkedin.com/in/elliot-charles-uk/"
+                            target="_blank"
+                            rel="noopener">
+
+                            <i class="fa-brands fa-linkedin"></i>
+
+                            View LinkedIn
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Featured Quote -->
+
+                <blockquote>
+
+                    <i class="fa-solid fa-quote-left"></i>
+
+                    Daniel transformed from having a basic understanding
+                    of IT into becoming our cornerstone for solving complex
+                    technical challenges and mastering abstract concepts.
+                    His dedication, professionalism and technical ability
+                    made him an invaluable member of our team.
+
+                </blockquote>
+
+                <!-- Highlights -->
+
+                <div class="testimonial-highlights">
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Technical Expertise
+
+                    </div>
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Customer Engagement
+
+                    </div>
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Agile Methodology
+
+                    </div>
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Problem Solving
+
+                    </div>
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Team Collaboration
+
+                    </div>
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Professional Communication
+
+                    </div>
+
+                </div>
+
+                <!-- Expandable Recommendation -->
+
+                <details class="testimonial-details">
+
+                    <summary>
+
+                        Read Full Recommendation
+
+                    </summary>
+
+                    <div class="testimonial-full">
+
+                        <p>
+
+                            I had the privilege of witnessing Daniel Charles's remarkable journey at 1.3 Creative, where his blend of technical prowess and exceptional interpersonal skills left an indelible mark.
+
+                        </p>
+
+                        <p>
+
+                            Daniel joined our digital design agency and HubSpot Solution Partner with a basic understanding of IT, and within just over two years, he metamorphosed into our cornerstone for resolving complex technical challenges and mastering abstract concepts. His journey from a novice to an expert in critical technologies and methodologies is a testament to his dedication and capability.
+
+                        </p>
+
+                        <p>
+
+                            Daniel's technical acumen spans HubSpot, Confluence, Jira, Jira Service Management, WordPress, WooCommerce, Elementor, Google Sheets and Slack. He became the company's primary expert for HubSpot-related projects and was trusted with managing significant parts of our enterprise application stack.
+
+                        </p>
+
+                        <p>
+
+                            Beyond his technical abilities, Daniel excelled during customer discovery sessions, collaborated exceptionally well throughout Agile development and consistently demonstrated professionalism, diligence and reliability.
+
+                        </p>
+
+                        <p>
+
+                            Daniel communicates clearly, approaches problems thoughtfully and combines technical expertise with excellent interpersonal skills. He became highly respected across the organisation and made a significant contribution to our success.
+
+                        </p>
+
+                        <p>
+
+                            I recommend Daniel without hesitation to any organisation seeking a dedicated software professional with excellent technical skills, strong analytical thinking and outstanding professionalism.
+
+                        </p>
+
+                    </div>
+
+                </details>
+
+            </article>
+
+            <!-- Recommendation Summary -->
+
+            <div class="testimonial-summary">
+
+                <div class="summary-card glass-card">
+
+                    <i class="fa-solid fa-award"></i>
+
+                    <h3>
+
+                        Trusted Professional
+
+                    </h3>
+
+                    <p>
+
+                        Recognised for consistently delivering
+                        high-quality technical solutions.
+
+                    </p>
+
+                </div>
+
+                <div class="summary-card glass-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h3>
+
+                        Team Player
+
+                    </h3>
+
+                    <p>
+
+                        Experienced working within Agile teams
+                        and collaborating across departments.
+
+                    </p>
+
+                </div>
+
+                <div class="summary-card glass-card">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <h3>
+
+                        Problem Solver
+
+                    </h3>
+
+                    <p>
+
+                        Enjoys learning complex systems and finding
+                        practical solutions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================================
+        GitHub Dashboard
+    =========================================================== -->
+
+    <section
+        id="github_dashboard"
+        class="github-dashboard"
+        aria-labelledby="github-heading">
+
+        <div class="section-container">
+
+            <!-- Section Header -->
+
+            <header class="section-header">
+
+                <span class="section-tag">
+
+                    GitHub
+
+                </span>
+
+                <h2 id="github-heading">
+
+                    Development Activity
+
+                </h2>
+
+                <p>
+
+                    Live information pulled directly from my GitHub
+                    profile, showcasing current projects, repository
+                    statistics and recent development activity.
+
+                </p>
+
+            </header>
+
+            <!-- ==================================================
+                Profile Card
+            =================================================== -->
+
+            <article class="github-profile glass-card">
+
+                <img
+                    id="github-avatar"
+                    alt="GitHub Profile Picture">
+
+                <div class="github-profile-content">
+
+                    <h3 id="github-name">
+
+                        Loading...
+
+                    </h3>
+
+                    <p id="github-bio">
+
+                        Loading profile...
+
+                    </p>
+
+                    <div class="github-meta">
+
+                        <div>
+
+                            <i class="fa-solid fa-book"></i>
+
+                            <strong id="repo-count">
+
+                                --
+
+                            </strong>
+
+                            Repositories
+
+                        </div>
+
+                        <div>
+
+                            <i class="fa-solid fa-user-group"></i>
+
+                            <strong id="followers">
+
+                                --
+
+                            </strong>
+
+                            Followers
+
+                        </div>
+
+                        <div>
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                            <strong id="following">
+
+                                --
+
+                            </strong>
+
+                            Following
+
+                        </div>
+
+                    </div>
+
+                    <div class="github-actions">
+
+                        <a
+                            href="https://github.com/DanielCharles11599"
+                            target="_blank"
+                            rel="noopener"
+                            class="button primary-button">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            Visit GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- ==================================================
+                Statistics
+            =================================================== -->
+
+            <div class="github-stats">
+
+                <article class="stat-card glass-card">
+
+                    <i class="fa-solid fa-code-branch"></i>
+
+                    <h3 id="public-repos">
+
+                        --
+
+                    </h3>
+
+                    <p>
+
+                        Public Repositories
+
+                    </p>
+
+                </article>
+
+                <article class="stat-card glass-card">
+
+                    <i class="fa-solid fa-file-code"></i>
+
+                    <h3 id="public-gists">
+
+                        --
+
+                    </h3>
+
+                    <p>
+
+                        Public Gists
+
+                    </p>
+
+                </article>
+
+                <article class="stat-card glass-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h3 id="followers-stat">
+
+                        --
+
+                    </h3>
+
+                    <p>
+
+                        Followers
+
+                    </p>
+
+                </article>
+
+                <article class="stat-card glass-card">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    <h3 id="following-stat">
+
+                        --
+
+                    </h3>
+
+                    <p>
+
+                        Following
+
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!-- ==================================================
+                Contribution Graph
+            =================================================== -->
+
+            <section class="github-section">
+
+                <div class="section-subtitle">
+
+                    <h3>
+
+                        Contribution Activity
+
+                    </h3>
+
+                </div>
+
+                <div class="heatmap glass-card">
+
+                    <img
+                        id="heatmap"
+                        alt="GitHub Contribution Heatmap">
+
+                </div>
+
+            </section>
+
+            <!-- ==================================================
+                Recent Repositories
+            =================================================== -->
+
+            <section class="github-section">
+
+                <div class="section-subtitle">
+
+                    <h3>
+
+                        Recent Repositories
+
+                    </h3>
+
+                    <p>
+
+                        My latest public projects and experiments.
+
+                    </p>
+
+                </div>
+
+                <div
+                    id="repository-grid"
+                    class="repository-grid">
+
+                    <!-- Filled by JavaScript -->
+
+                </div>
+
+            </section>
+
+            <!-- ==================================================
+                Development Philosophy
+            =================================================== -->
+
+            <section class="github-philosophy glass-card">
+
+                <div class="philosophy-icon">
+
+                    <i class="fa-solid fa-terminal"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Continuous Learning
+
+                    </h3>
+
+                    <p>
+
+                        My GitHub profile reflects my commitment to
+                        continuous improvement. Alongside university
+                        coursework, I regularly build personal projects,
+                        experiment with new technologies and explore
+                        software engineering concepts that extend beyond
+                        the classroom.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+<!-- ==========================================================
+    Footer
+=========================================================== -->
+
+    <footer class="footer">
+
+        <div class="section-container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <img
+                        src="Virtual_CV-Logo_Dark_Theme.png"
+                        class="logo-dark"
+                        alt="Daniel Charles Logo">
+
+                    <img
+                        src="Virtual_CV-Logo_Light_Theme.png"
+                        class="logo-light"
+                        alt="Daniel Charles Logo">
+
+                    <h3>
+
+                        Daniel Charles
+
+                    </h3>
+
+                    <p>
+
+                        Final Year Information Technology Student
+
+                    </p>
+
+                </div>
+
+                <nav class="footer-links">
+
+                    <a href="#home">Home</a>
+
+                    <a href="#about_me">About</a>
+
+                    <a href="#projects">Projects</a>
+
+                    <a href="#skills">Skills</a>
+
+                    <a href="#certifications">Certifications</a>
+
+                    <a href="#testimonials">Testimonials</a>
+
+                    <a href="#github_dashboard">GitHub</a>
+
+                </nav>
+
+                <div class="footer-social">
+
+                    <a
+                        href="https://github.com/DanielCharles11599"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/daniel-charles-30a1a3217/"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 Daniel Charles. All Rights Reserved.
+
+                </p>
+
+                <p>
+
+                    Designed & Developed by Daniel Charles
+
+                </p>
+
+            </div>
+
+        </div>
+
+</footer>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
+
 </body>
+
 </html>
