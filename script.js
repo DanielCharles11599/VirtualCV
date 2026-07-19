@@ -1,3 +1,33 @@
+// Splash screen
+let intro = document.querySelector('.intro');
+let splash = document.querySelector('.splash-header');
+let splashSpan = document.querySelectorAll('.splash');
+
+window.addEventListener('DOMContentLoaded', ()=>{
+
+    setTimeout(()=>{
+
+        splashSpan.forEach((span, idx)=>{
+            setTimeout(()=>{
+                span.classList.add('active');
+            }, (idx + 1) * 400)
+        });
+
+        setTimeout(()=>{
+            splashSpan.forEach((span, idx)=>{
+                setTimeout(()=>{
+                    span.classList.remove('active');
+                    span.classList.add('fade');
+                }, (idx + 1) * 50)
+            })
+        }, 2000);
+
+        setTimeout(()=>{
+            intro.style.top = '-100vh';
+        }, 2300)
+    })
+})
+
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
@@ -21,26 +51,6 @@ const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
     navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
-
-
-// Expanding projectCards on click
-const projectCards = document.querySelectorAll(".project-card");
-
-projectCards.forEach(card => {
-
-    const header = card.querySelector(".project-header");
-
-    header.addEventListener("click", () => {
-
-        projectCards.forEach(otherCard => {
-            if (otherCard !== card) {
-                otherCard.classList.remove("active");
-            }
-        });
-
-        card.classList.toggle("active");
-    });
 });
 
 // Dark Mode/Light Mode toggle
@@ -72,6 +82,24 @@ themeSwitch.addEventListener("change", () => {
     }
 });
 
+// Expanding projectCards on click
+const projectCards = document.querySelectorAll(".project-card");
+
+projectCards.forEach(card => {
+
+    const header = card.querySelector(".project-header");
+
+    header.addEventListener("click", () => {
+
+        projectCards.forEach(otherCard => {
+            if (otherCard !== card) {
+                otherCard.classList.remove("active");
+            }
+        });
+
+        card.classList.toggle("active");
+    });
+});
 
 // Filter for Projects
 // projectCards declared above in expanding projectCards
