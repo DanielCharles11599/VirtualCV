@@ -55,26 +55,49 @@ window.addEventListener("scroll", () => {
 
 // Dark Mode/Light Mode toggle
 const themeSwitch = document.getElementById("theme-switch");
+const toggleSlider = document.querySelector(".toggle-slider");
 const logo = document.getElementById("site-logo");
+
 
 themeSwitch.addEventListener("change", () => {
 
-    const rect = document.querySelector(".theme-switch").getBoundingClientRect();
+    const rect = toggleSlider.getBoundingClientRect();
 
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
 
-    document.documentElement.style.setProperty("--theme-x", `${x}px`);
-    document.documentElement.style.setProperty("--theme-y", `${y}px`);
+    document.documentElement.style.setProperty(
+        "--theme-x",
+        `${x}px`
+    );
+
+    document.documentElement.style.setProperty(
+        "--theme-y",
+        `${y}px`
+    );
+
+
+    const changeTheme = () => {
+        document.body.classList.toggle(
+            "light-mode",
+            themeSwitch.checked
+        );
+
+        if (logo) {
+            logo.src = themeSwitch.checked
+                ? "Virtual_CV-Logo_Light_Theme.png"
+                : "Virtual_CV-Logo_Dark_Theme.png";
+        }
+    };
+
 
     if (!document.startViewTransition) {
-        toggleTheme();
-        return;
+        changeTheme();
+    } 
+    else {
+        document.startViewTransition(changeTheme);
     }
 
-    document.startViewTransition(() => {
-        toggleTheme();
-    });
 });
 
 function toggleTheme() {
@@ -306,3 +329,52 @@ function createThemeCircle(x, y) {
         circle.remove();
     });
 }
+
+/*
+// Cursor glow effect
+const cursorGlow = document.querySelector(".cursor-glow");
+
+if (cursorGlow) {
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let glowX = 0;
+    let glowY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+        }
+    );
+
+    function animateGlow() {
+        glowX += (mouseX - glowX) * 0.08;
+        glowY += (mouseY - glowY) * 0.08;
+
+        cursorGlow.style.left = `${glowX}px`;
+        cursorGlow.style.top = `${glowY}px`;
+
+        requestAnimationFrame(animateGlow);
+    }
+
+    animateGlow();
+}
+*/
+
+const cursorGlow = document.querySelector(".cursor-glow");
+
+console.log("Cursor glow:", cursorGlow);
+
+document.addEventListener("mousemove", (event) => {
+
+    console.log(
+        "Mouse:",
+        event.clientX,
+        event.clientY
+    );
+
+    cursorGlow.style.left = `${event.clientX}px`;
+    cursorGlow.style.top = `${event.clientY}px`;
+
+});
