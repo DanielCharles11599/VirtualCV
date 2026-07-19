@@ -1060,6 +1060,7 @@ transform: translateY(-3px);
 ::view-transition-new(root) {
 animation: none;
 mix-blend-mode: normal;
+animation-duration: 2s;
 }
 
 ::view-transition-old(root) {

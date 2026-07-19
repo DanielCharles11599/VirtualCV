@@ -59,9 +59,7 @@ const logo = document.getElementById("site-logo");
 
 themeSwitch.addEventListener("change", () => {
 
-    const rect = document
-        .querySelector(".theme-switch")
-        .getBoundingClientRect();
+    const rect = document.querySelector(".theme-switch").getBoundingClientRect();
 
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
