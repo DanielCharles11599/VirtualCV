@@ -200,11 +200,11 @@ opacity: 0;
 }
 
 body.light-mode .logo-dark {
-opacity:0;
+opacity: 0;
 }
 
 body.light-mode .logo-light {
-opacity:1;
+opacity: 1;
 }
 
 .nav-links {
@@ -222,7 +222,7 @@ position: relative;
 }
 
 .nav-links a::after {
-content: '';
+content: "";
 position: absolute;
 bottom: -5px;
 left: 0;
@@ -359,7 +359,7 @@ box-shadow: 0 5px 12px var(--accent-glow);
 .git-button:focus-visible {
 outline: none;
 box-shadow: 0 0 0 4px var(--accent-glow),
-        0 10px 25px var(--accent-glow);
+            0 10px 25px var(--accent-glow);
 }
 
 /* About Me Section*/
@@ -369,7 +369,7 @@ background: var(--dark-bg);
 }
 
 .about-container {
-max-width: 1200px;
+max-width: 100%;
 margin: auto;
 }
 
@@ -483,6 +483,7 @@ transform: translateY(-4px);
 .projects {
 padding: 5rem 5%;
 background: var(--darker-bg);
+width: 100%;
 }
 
 .project-filters {
@@ -546,10 +547,12 @@ font-weight: 600;
 }
 
 .project-grid {
+position: relative;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap:2rem;
 margin-top: 3rem;
+width: 100%;
 }
 
 .project-card {
