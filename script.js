@@ -330,38 +330,8 @@ function createThemeCircle(x, y) {
     });
 }
 
-/*
-// Cursor glow effect
-const cursorGlow = document.querySelector(".cursor-glow");
 
-if (cursorGlow) {
-    let mouseX = 0;
-    let mouseY = 0;
-
-    let glowX = 0;
-    let glowY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-        }
-    );
-
-    function animateGlow() {
-        glowX += (mouseX - glowX) * 0.08;
-        glowY += (mouseY - glowY) * 0.08;
-
-        cursorGlow.style.left = `${glowX}px`;
-        cursorGlow.style.top = `${glowY}px`;
-
-        requestAnimationFrame(animateGlow);
-    }
-
-    animateGlow();
-}
-*/
-
+// Cursor Glow Effect
 const cursorGlow = document.querySelector(".cursor-glow");
 
 console.log("Cursor glow:", cursorGlow);
