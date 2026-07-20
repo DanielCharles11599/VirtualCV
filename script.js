@@ -53,6 +53,7 @@ window.addEventListener("scroll", () => {
     navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
 
+
 // Dark Mode/Light Mode toggle
 const themeSwitch = document.getElementById("theme-switch");
 const toggleSlider = document.querySelector(".toggle-slider");
@@ -111,6 +112,19 @@ function toggleTheme() {
         logo.src = "Virtual_CV-Logo_Dark_Theme.png";
     }
 }
+
+
+// Hamburger Menu for Mobile
+const menuButton = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuButton && navLinks) {
+
+    menuButton.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
+
 
 // Expanding projectCards on click
 const projectCards = document.querySelectorAll(".project-card");
