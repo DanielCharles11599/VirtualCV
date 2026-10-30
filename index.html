@@ -1,80 +1,182 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Charles Portfolio</title>
+    <title>Daniel Charles | IT Student, AI, Data &amp; Software</title>
+    <meta name="description" content="Portfolio of Daniel Charles, a final-year IT student in Potchefstroom with 2+ years of HubSpot and web experience, moving into deep learning research.">
+    <meta name="author" content="Daniel Charles">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a">
 
-    <!-- Favicon fallback for older browsers -->
-    <link rel="icon" href="/Site_Favicon.ico" sizes="any">
-    
-    <!-- Main scalable favicon for modern browsers -->
-    <link rel="icon" type="image/x-icon" href="/Site_Favicon.ico">
-    
-    <!-- Favicon for Apple devices -->
-    <link rel="apple-touch-icon" href="/Site_Favicon.png">
+    <!--
+        SHARE PREVIEW (Open Graph / Twitter)
+        og:url and og:image must be absolute URLs. If your site is not hosted at
+        https://danielcharles11599.github.io/ then update the three URLs below
+        (og:url, og:image, twitter:image) and the "url"/"image" in the JSON-LD block.
+        For the best preview, add a 1200x630 image (e.g. og-image.png) and point og:image at it.
+    -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Daniel Charles">
+    <meta property="og:title" content="Daniel Charles | IT Student, AI, Data &amp; Software">
+    <meta property="og:description" content="Final-year IT student with 2+ years of HubSpot and web experience, moving into an Honours in Computer Science &amp; Information Systems with a deep learning focus.">
+    <meta property="og:url" content="https://danielcharles11599.github.io/">
+    <meta property="og:image" content="https://danielcharles11599.github.io/Profile%20Picture.jpg">
+    <meta property="og:image:alt" content="Portrait of Daniel Charles">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daniel Charles | IT Student, AI, Data &amp; Software">
+    <meta name="twitter:description" content="Final-year IT student with 2+ years of HubSpot and web experience, moving into deep learning research.">
+    <meta name="twitter:image" content="https://danielcharles11599.github.io/Profile%20Picture.jpg">
+
+    <!-- Structured data so search engines understand who this site is about -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Daniel Charles",
+        "url": "https://danielcharles11599.github.io/",
+        "image": "https://danielcharles11599.github.io/Profile%20Picture.jpg",
+        "jobTitle": "Final-year Information Technology student",
+        "description": "Final-year IT student with 2+ years of HubSpot and web design experience, moving into deep learning research.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Potchefstroom",
+            "addressCountry": "ZA"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/daniel-charles-30a1a3217/",
+            "https://github.com/DanielCharles11599"
+        ],
+        "knowsAbout": ["Deep learning", "Machine learning", "Software development", "Data analytics", "SQL", "Python", "Java", "HubSpot"]
+    }
+    </script>
+
+    <!-- Favicons (relative paths so they also work on GitHub Pages project sites) -->
+    <link rel="icon" href="Site_Favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="Site_Favicon.png">
+
+    <!-- Roboto font (the stylesheet asks for it, so it has to be loaded) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
     <!-- link to css file -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- link to fontawesome for inserting social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 
 <body>
-    <!-- Splash Screen -->
-    <div class="intro">
-        <img src="Virtual_CV-Logo_Dark_Theme.png" class="splash-logo">
-        <h1 class="splash-header">
+    <!-- Runs before first paint: applies the saved/system theme and skips the splash for repeat visits -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem("theme");
+                var light = saved
+                    ? saved === "light"
+                    : window.matchMedia("(prefers-color-scheme: light)").matches;
+                if (light) document.body.classList.add("light-mode");
+
+                var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                if (reduceMotion || sessionStorage.getItem("splashSeen")) {
+                    document.documentElement.classList.add("no-splash");
+                }
+            } catch (e) { /* storage blocked: fall back to defaults */ }
+        })();
+    </script>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Splash Screen (decorative, shown once per browser session) -->
+    <div class="intro" aria-hidden="true">
+        <img src="Virtual_CV-Logo_Dark_Theme.png" alt="" class="splash-logo splash-logo-dark">
+        <img src="Virtual_CV-Logo_Light_Theme.png" alt="" class="splash-logo splash-logo-light">
+        <div class="splash-header">
             <span class="splash">Daniel</span>
             <span class="splash">Charles</span>
-        </h1>
+        </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
 
-        <a href="#home" class="logo">
-            <img src="Virtual_CV-Logo_Dark_Theme.png" class="logo-dark">
-            <img src="Virtual_CV-Logo_Light_Theme.png" class="logo-light">
+        <a href="#home" class="logo" aria-label="Daniel Charles, back to top">
+            <img src="Virtual_CV-Logo_Dark_Theme.png" alt="" class="logo-dark">
+            <img src="Virtual_CV-Logo_Light_Theme.png" alt="" class="logo-light">
         </a>
 
-        
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
             <li><a href="#about_me">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#research">Research</a></li>
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#github_dashboard">GitHub Dashboard</a> </li>
+            <li><a href="#github_dashboard">GitHub</a></li>
         </ul>
 
         <div class="theme-toggle">
-            <i class="fa-solid fa-moon"></i>
-            <input type="checkbox" id="theme-switch">
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            <input type="checkbox" id="theme-switch" aria-label="Switch between dark and light mode">
             <label for="theme-switch" class="toggle-slider"></label>
-            <i class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-sun" aria-hidden="true"></i>
         </div>
 
-        <button class="menu-toggle" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars"></i>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
     </nav>
+
+    <main id="main">
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Final Year IT Student</h1>
+            <p class="hero-badge">
+                <span class="dot" aria-hidden="true"></span>
+                Final-year IT student &middot; Honours in Computer Science &amp; Information Systems next
+            </p>
 
-            <p>Bringing a calm and methodical approach to problem solving.</p>
+            <h1>Building data-driven and AI-powered software.</h1>
 
-            <a href="https://www.linkedin.com/in/daniel-charles-30a1a3217/" class="button">Let's Connect</a>
-            <a href="Daniel_Charles_Resume.pdf" class="button">View my Resume</a>
+            <p>
+                I'm Daniel Charles, a final-year IT student with 2+ years of client-facing HubSpot and web design
+                experience. Next, I'm heading into an Honours degree in Computer Science &amp; Information Systems,
+                with deep learning as my research focus.
+            </p>
+
+            <div class="hero-actions">
+                <a href="https://www.linkedin.com/in/daniel-charles-30a1a3217/" class="button">Let's Connect</a>
+                <a href="Daniel_Charles_Resume.pdf" class="button">View my Resume</a>
+                <a href="#projects" class="button secondary">See my Projects</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong data-count="2" data-suffix="+">2+</strong>
+                    <span>Years in industry</span>
+                </div>
+                <div class="hero-stat">
+                    <strong data-stat="projects" data-count="9">9</strong>
+                    <span>Projects on GitHub</span>
+                </div>
+                <div class="hero-stat">
+                    <strong data-stat="certs" data-count="15">15</strong>
+                    <span>Certifications &amp; courses</span>
+                </div>
+                <div class="hero-stat">
+                    <strong data-count="7">7</strong>
+                    <span>Programming languages</span>
+                </div>
+            </div>
         </div>
 
         <div class="hero-image">
-            <img src="Profile Picture.jpg" alt="Profile" class="profile-img">
+            <img src="Profile%20Picture.jpg" alt="Portrait of Daniel Charles" class="profile-img" width="400" height="400" fetchpriority="high">
         </div>
     </section>
 
@@ -96,40 +198,44 @@
                     <p>
                         I am currently a final-year Information Technology student with a
                         passion for software development, artificial intelligence, and
-                        solving real-world problems through technology.
+                        solving real-world problems through technology. I bring a calm and
+                        methodical approach to problem solving.
                     </p>
-                    
+
                     <p>
                         I enjoy designing software that is efficient, scalable, and easy
                         to use. My interests include machine
                         learning, system analysis, and finding efficient ways to analyse data.
                     </p>
-                    
+
                     <p>
-                        Outside of programming, I am an avid gamer who tries to peak behind the curtains to figure out
-                        how things interact (sometimes even down to the kernel level). I am fascinated with 
+                        Outside of programming, I am an avid gamer who tries to peek behind the curtains to figure out
+                        how things interact (sometimes even down to the kernel level). I am fascinated with
                         understanding how things work and often spend large amounts of my time watching videos on random topics.
-                        <br><br>
-                        My current areas of interest include:<br>
-                        • How CPUs and GPUs work.<br>
-                        • Zoology clades (specifically birds and reptiles).<br>
-                        • Blacksmithing.<br>
-                        • Game Theory.<br>
-                        • Optimal builds and interactions for the current games I am playing.<br>
                     </p>
+
+                    <p>My current areas of interest include:</p>
+                    <ul class="interest-list">
+                        <li>How CPUs and GPUs work.</li>
+                        <li>Zoology clades (specifically birds and reptiles).</li>
+                        <li>Blacksmithing.</li>
+                        <li>Game Theory.</li>
+                        <li>Optimal builds and interactions for the current games I am playing.</li>
+                    </ul>
                 </div>
 
                 <div class="about-cards">
                     <div class="about-card">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                         <h4>Education</h4>
-                        <p>BSc Information Technology (current)</p>
+                        <p>BSc Information Technology (final year)<br>
+                           BSc Honours, Computer Science &amp; Information Systems (upcoming)</p>
                     </div>
 
                     <div class="about-card">
-                        <i class="fa-solid fa-code"></i>
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
                         <h4>Experience</h4>
-                        <p>5+ Personal Software Projects.<br>
+                        <p>9 Projects on GitHub.<br>
                            Proficient in 7 Programming Languages.<br>
                            2+ Years in Web Design.<br>
                            Company Lead on All HubSpot-related projects.<br>
@@ -137,13 +243,13 @@
                     </div>
 
                     <div class="about-card">
-                        <i class="fa-solid fa-brain"></i>
+                        <i class="fa-solid fa-brain" aria-hidden="true"></i>
                         <h4>Interests</h4>
-                        <p>AI, Data Analytics & Software Engineering</p>
+                        <p>AI, Deep Learning, Data Analytics &amp; Software Engineering</p>
                     </div>
 
                     <div class="about-card">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                         <h4>Location</h4>
                         <p>Potchefstroom, South Africa</p>
                     </div>
@@ -159,62 +265,152 @@
                     <span>System Analysis</span>
                     <span>Java</span>
                     <span>Python</span>
-                    <span>Datawarehouses</span>
+                    <span>Data Warehouses</span>
                     <span>SQL</span>
                 </div>
 
-                <div>
-                    <a href="https://github.com/DanielCharles11599" class="git-button">View my GitHub</a>
+                <div class="focus-actions">
+                    <a href="https://github.com/DanielCharles11599" class="git-button" target="_blank" rel="noopener noreferrer">View my GitHub</a>
+                    <a href="#research" class="git-button secondary">My Research Plans</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="section-title">
+            <h2>Experience &amp; Education</h2>
+            <p>Where I've worked, what I'm studying, and where I'm heading next.</p>
+        </div>
+
+        <div class="timeline">
+
+            <article class="timeline-item upcoming">
+                <div class="timeline-card glass-card">
+                    <div class="timeline-meta">
+                        <span class="timeline-type">Education</span>
+                        <span class="timeline-date">Upcoming</span>
+                    </div>
+                    <h3>BSc Honours: Computer Science &amp; Information Systems</h3>
+                    <h4>Research focus: deep learning</h4>
+                    <p>
+                        I'm moving into an Honours degree where I plan to complete a research project in deep
+                        learning. <a href="#research">See my research plans</a>.
+                    </p>
+                </div>
+            </article>
+
+            <article class="timeline-item current">
+                <div class="timeline-card glass-card">
+                    <div class="timeline-meta">
+                        <span class="timeline-type">Education</span>
+                        <span class="timeline-date">Final year</span>
+                    </div>
+                    <h3>BSc Information Technology</h3>
+                    <ul class="timeline-points">
+                        <li>Current focus areas: system analysis, data warehouses, Java, Python and SQL.</li>
+                        <li>Collaborated with other students on the CSE Donation and Project Tracker, a full database-backed system.</li>
+                        <li>Worked through DeepLearning.AI's Supervised Machine Learning course alongside my degree, building regression projects by hand and with scikit-learn.</li>
+                    </ul>
+                    <ul class="tech-tags" aria-label="Focus areas">
+                        <li>System Analysis</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="timeline-item">
+                <div class="timeline-card glass-card">
+                    <div class="timeline-meta">
+                        <span class="timeline-type">Work</span>
+                        <!-- Add your exact start and end dates here, e.g. "Mar 2022 - Apr 2024" -->
+                        <span class="timeline-date">2+ years</span>
+                    </div>
+                    <!-- Replace this heading with your exact job title if you prefer -->
+                    <h3>HubSpot &amp; Web Design</h3>
+                    <h4>1.3 Creative &middot; Digital design agency &amp; HubSpot Solution Partner</h4>
+                    <ul class="timeline-points">
+                        <li>Company lead on all HubSpot-related projects.</li>
+                        <li>Contributed to client discovery sessions and the build phase of projects, working in an Agile team.</li>
+                        <li>Managed sections of the agency's application stack, including Jira, Jira Service Management, Confluence, Slack and Google Sheets.</li>
+                        <li>Designed and built websites with WordPress, WooCommerce and Elementor.</li>
+                        <li>Earned Atlassian, Slack and Google certifications along the way.</li>
+                    </ul>
+                    <ul class="tech-tags" aria-label="Tools and skills used">
+                        <li>HubSpot</li>
+                        <li>WordPress</li>
+                        <li>WooCommerce</li>
+                        <li>Elementor</li>
+                        <li>Jira</li>
+                        <li>Confluence</li>
+                        <li>Slack</li>
+                        <li>Agile</li>
+                    </ul>
+                    <p class="timeline-link"><a href="#testimonials">Read my manager's recommendation <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2>Completed Projects</h2>
+        <div class="section-title">
+            <h2>Projects</h2>
+            <p>Team projects, algorithm work and machine-learning experiments. Expand any card for details, or filter by language.</p>
+        </div>
 
-        <div class="project-filters">
+        <div class="project-filters" role="group" aria-label="Filter projects by language">
 
-            <button class="filter-btn active" data-filter="all">
-                <i class="fa-solid fa-desktop"></i>
+            <button class="filter-btn active" data-filter="all" aria-pressed="true">
+                <i class="fa-solid fa-desktop" aria-hidden="true"></i>
                 All
             </button>
 
-            <button class="filter-btn" data-filter="python">
-                <i class="fa-brands fa-python"></i>
+            <button class="filter-btn" data-filter="python" aria-pressed="false">
+                <i class="fa-brands fa-python" aria-hidden="true"></i>
                 Python
             </button>
 
-            <button class="filter-btn" data-filter="java">
-                <i class="fa-brands fa-java"></i>
+            <button class="filter-btn" data-filter="java" aria-pressed="false">
+                <i class="fa-brands fa-java" aria-hidden="true"></i>
                 Java
             </button>
 
-            <button class="filter-btn" data-filter="csharp">
-                <i class="fa-solid fa-hashtag"></i>
+            <button class="filter-btn" data-filter="csharp" aria-pressed="false">
+                <i class="fa-solid fa-hashtag" aria-hidden="true"></i>
                 C#
             </button>
 
-            <button class="filter-btn" data-filter="cpp">
-                <i class="fa-solid fa-code"></i>
+            <button class="filter-btn" data-filter="cpp" aria-pressed="false">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
                 C++
             </button>
 
-            <button class="filter-btn" data-filter="sql">
-                <i class="fa-solid fa-database"></i>
+            <button class="filter-btn" data-filter="sql" aria-pressed="false">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
                 SQL
             </button>
         </div>
 
-        <p class="project-count">
-            Showing <span id="project-count">8</span> projects
+        <p class="project-count" aria-live="polite">
+            Showing <span id="project-visible">9</span> <span id="project-label">projects</span>
         </p>
 
-        <div class="project-grid">
-
-            <div class="project-card" data-language="python">
+        <div class="project-group" id="featured-projects">
+            <h3 class="group-title"><i class="fa-solid fa-star" aria-hidden="true"></i> Featured Projects</h3>
+            <p class="group-sub">The projects that best show my range.</p>
+            <!-- Tip: add a screenshot to a featured card with
+                 <img class="project-shot" src="your-screenshot.png" alt="Screenshot of the project" loading="lazy">
+                 placed directly under the project-header button. -->
+            <div class="project-grid featured-grid">
+            <div class="project-card featured" data-language="python">
                 <i class="fa-solid fa-chess skill-icon"></i>
+                <span class="featured-badge">AI &amp; algorithms</span>
                 <button class="project-header">
                     <div>
                         <h3>Chess Bot</h3>
@@ -223,6 +419,8 @@
 
                     <i class="fa-solid fa-chevron-down arrow"></i>
                 </button>
+                <dl class="case-summary"><div><dt>Focus</dt><dd>Teach a program to choose strong chess moves by searching ahead.</dd></div><div><dt>Approach</dt><dd>Minimax search with alpha-beta pruning to skip branches that cannot change the result, with adjustable search depth.</dd></div></dl>
+                <ul class="tech-tags" aria-label="Technologies used"><li>Python</li><li>Minimax</li><li>Alpha-beta pruning</li><li>Recursion</li></ul>
 
                 <div class="project-content">
                     <p>Description:<br>
@@ -234,14 +432,15 @@
                         • Adjustable search depth.</p>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Chess%20Bot" target="_blank">
+                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Chess%20Bot" target="_blank" rel="noopener noreferrer">
                         View Project
                     </a>
                 </div>
             </div>
 
-            <div class="project-card" data-language="csharp sql">
+            <div class="project-card featured" data-language="csharp sql">
                 <i class="fa-solid fa-square-check skill-icon"></i>
+                <span class="featured-badge">Team project</span>
                 <button class="project-header">
                     <div>
                         <h3>CSE Donation and Project Tracker</h3>
@@ -250,6 +449,8 @@
 
                     <i class="fa-solid fa-chevron-down arrow"></i>
                 </button>
+                <dl class="case-summary"><div><dt>Focus</dt><dd>Give hostels one place to track donations and projects.</dd></div><div><dt>Approach</dt><dd>A C# (.NET Framework) application with a GUI, built with other students and backed by a SQL database.</dd></div></dl>
+                <ul class="tech-tags" aria-label="Technologies used"><li>C#</li><li>.NET Framework</li><li>SQL</li><li>Teamwork</li></ul>
 
                 <div class="project-content">
                     <p>Description:<br>
@@ -260,12 +461,46 @@
                         • Scalable.</p>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/CSEDonationAndProjectTracker" target="_blank">
+                    <a href="https://github.com/DanielCharles11599/CSEDonationAndProjectTracker" target="_blank" rel="noopener noreferrer">
                         View Project
                     </a>
                 </div>
             </div>
 
+            <div class="project-card featured" data-language="python">
+                <i class="fa-solid fa-house skill-icon"></i>
+                <span class="featured-badge">Machine learning</span>
+                <button class="project-header">
+                    <div>
+                        <h3>House Price Predictor (Single Variable)</h3>
+                        <h4>Language: Python</h4>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down arrow"></i>
+                </button>
+                <dl class="case-summary"><div><dt>Focus</dt><dd>Regression implemented by hand, without any ML libraries.</dd></div><div><dt>Approach</dt><dd>Built while working through DeepLearning.AI's Supervised Machine Learning course, as a foundation for my move into deep learning.</dd></div></dl>
+                <ul class="tech-tags" aria-label="Technologies used"><li>Python</li><li>Regression</li><li>Machine learning</li></ul>
+
+                <div class="project-content">
+                    <p>Description:<br>
+                        A project built while following DeepLearning.AI's "Supervised Machine Learning: Regression and Classification" course.
+                        <br><br>
+                        Key Features:<br>
+                        • Regression calculated manually without using any libraries.</p>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/House%20Price%20Predictor%20(Machine%20Learning%20Test)%20(11-2024)" target="_blank" rel="noopener noreferrer">
+                        View Project
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="project-group" id="more-projects">
+            <h3 class="group-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> More Projects &amp; Early Work</h3>
+            <p class="group-sub">Smaller builds that show how my skills have grown.</p>
+            <div class="project-grid">
             <div class="project-card" data-language="python">
                 <i class="fa-solid fa-gamepad skill-icon"></i>
                 <button class="project-header">
@@ -279,7 +514,7 @@
 
                 <div class="project-content">
                     <p>Description:<br>
-                        Builds on an existing mod that slows down time when aimiing down the scope.
+                        Builds on an existing mod that slows down time when aiming down the scope.
                         <br><br>
                         Key Features:<br>
                         • Modifies existing game files.<br>
@@ -287,7 +522,7 @@
                         • Changes weapon skin randomly whenever the aim down sight keybind is pressed.</p>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Assassin%20Gun%20Mod%20for%20Borderlands%202" target="_blank">
+                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Assassin%20Gun%20Mod%20for%20Borderlands%202" target="_blank" rel="noopener noreferrer">
                         View Project
                     </a>
                 </div>
@@ -313,7 +548,7 @@
                         • Questions are implemented using dictionaries for improved performance.</p>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Who%20Wants%20to%20be%20a%20Questionnaire%20Game%20(03-2024)" target="_blank">
+                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Who%20Wants%20to%20be%20a%20Questionnaire%20Game%20(03-2024)" target="_blank" rel="noopener noreferrer">
                         View Project
                     </a>
                 </div>
@@ -335,11 +570,11 @@
                         Adapted my previous questionnaire game into C++ and enabled the option to easily change the questions asked.
                         <br><br>
                         Key Features:<br>
-                        • Completely customizeable.<br>
+                        • Completely customisable.<br>
                         • Makes use of vector arrays.</p>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/C%2B%2B%20Quiz%20Tool%20(10-2024)" target="_blank">
+                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/C%2B%2B%20Quiz%20Tool%20(10-2024)" target="_blank" rel="noopener noreferrer">
                         View Project
                     </a>
                 </div>
@@ -358,40 +593,15 @@
 
                 <div class="project-content">
                     <p>Description:<br>
-                        A project built while following DeepLearning.AI's "Supervised Machine Learning: Regression and Classificaton" course.
+                        A project built while following DeepLearning.AI's "Supervised Machine Learning: Regression and Classification" course.
                         <br><br>
                         Key Features:<br>
-                        • Data visualization.<br>
+                        • Data visualisation.<br>
                         • Multiple input variables.<br>
-                        • Uses Scikit Learn.</p>
+                        • Uses scikit-learn.</p>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Multiple%20Regression%20House%20Cost%20Calculator%20using%20scikit-learn%20(11-2024)" target="_blank">
-                        View Project
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-card" data-language="python">
-                <i class="fa-solid fa-house skill-icon"></i>
-                <button class="project-header">
-                    <div>
-                        <h3>House Price Predictor (Single Variable)</h3>
-                        <h4>Language: Python</h4>
-                    </div>
-
-                    <i class="fa-solid fa-chevron-down arrow"></i>
-                </button>
-
-                <div class="project-content">
-                    <p>Description:<br>
-                        A project built while following DeepLearning.AI's "Supervised Machine Learning: Regression and Classificaton" course.
-                        <br><br>
-                        Key Features:<br>
-                        • Regression calculated manually without using any libraries.</p>
-                </div>
-                <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/House%20Price%20Predictor%20(Machine%20Learning%20Test)%20(11-2024)" target="_blank">
+                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Multiple%20Regression%20House%20Cost%20Calculator%20using%20scikit-learn%20(11-2024)" target="_blank" rel="noopener noreferrer">
                         View Project
                     </a>
                 </div>
@@ -417,7 +627,7 @@
                         • Went from a basic math program to including dictionaries, functions, and more as I progressed.</p>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Income%20and%20Expense%20Calculator%20(05-2024)" target="_blank">
+                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Income%20and%20Expense%20Calculator%20(05-2024)" target="_blank" rel="noopener noreferrer">
                         View Project
                     </a>
                 </div>
@@ -443,111 +653,218 @@
                         • Works on multiple file types.</p>
                 </div>
                 <div class="project-footer">
-                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Image%20Editor" target="_blank">
+                    <a href="https://github.com/DanielCharles11599/Personal-Projects/tree/main/Image%20Editor" target="_blank" rel="noopener noreferrer">
                         View Project
                     </a>
                 </div>
             </div>
+            </div>
         </div>
+
+        <p class="project-empty is-hidden" id="project-empty">
+            No <span id="project-empty-label">Java</span> projects on GitHub yet.
+            <a href="#certifications">See my certifications</a> or pick another language.
+        </p>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2>Technical Expertise</h2>
+        <div class="section-title">
+            <h2>Technical Expertise</h2>
+            <p>Self-assessed, with evidence linked wherever I have it.</p>
+        </div>
+
+        <ul class="skill-legend" aria-label="Proficiency levels">
+            <li><span class="skill-level level-core">Core strength</span></li>
+            <li><span class="skill-level level-strong">Strong</span></li>
+            <li><span class="skill-level level-working">Working knowledge</span></li>
+            <li><span class="skill-level level-developing">Developing</span></li>
+        </ul>
+
         <div class="skills-grid">
             <div class="skill-card">
-                <i class="fa-solid fa-comment-nodes"></i>
+                <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
                 <h3>Programming Languages</h3>
-                <p>Java</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i></p>
-                <p>Python</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i></p>
-                <p>C#</p> 
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i></p>
-                <p>C++</p> 
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
+                <ul class="skill-list">
+                    <li>
+                        <div class="skill-row"><span class="skill-name">Java</span><span class="skill-level level-core">Core strength</span></div>
+                        <div class="skill-evidence"><span>Sololearn Java certificates (Introduction and Intermediate).</span></div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">Python</span><span class="skill-level level-core">Core strength</span></div>
+                        <div class="skill-evidence">
+                            <span>Sololearn and Mimo certificates, plus most of my projects.</span>
+                            <a class="evidence-link" href="#projects" data-filter-link="python"><span data-project-count="python">7 projects</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">C#</span><span class="skill-level level-core">Core strength</span></div>
+                        <div class="skill-evidence">
+                            <span>Sololearn Introduction to C# certificate.</span>
+                            <a class="evidence-link" href="#projects" data-filter-link="csharp"><span data-project-count="csharp">1 project</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">C++</span><span class="skill-level level-strong">Strong</span></div>
+                        <div class="skill-evidence">
+                            <span>Sololearn Introduction to C++ certificate.</span>
+                            <a class="evidence-link" href="#projects" data-filter-link="cpp"><span data-project-count="cpp">1 project</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
+
             <div class="skill-card">
-                <i class="fa-solid fa-code skill-icon"></i>
+                <i class="fa-solid fa-code skill-icon" aria-hidden="true"></i>
                 <h3>Frontend Development</h3>
-                <p>HTML</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>CSS</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>JavaScript</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
+                <ul class="skill-list">
+                    <li>
+                        <div class="skill-row"><span class="skill-name">HTML</span><span class="skill-level level-strong">Strong</span></div>
+                        <div class="skill-evidence"><span>This portfolio, plus 2+ years of web design work (WordPress and Elementor).</span></div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">CSS</span><span class="skill-level level-strong">Strong</span></div>
+                        <div class="skill-evidence"><span>Light and dark themes, responsive layouts and animation on this site.</span></div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-level level-working">Working knowledge</span></div>
+                        <div class="skill-evidence"><span>Powers this site's theme switcher, project filters and live GitHub data.</span></div>
+                    </li>
+                </ul>
             </div>
+
             <div class="skill-card">
-                <i class="fa-solid fa-server skill-icon"></i>
+                <i class="fa-solid fa-server skill-icon" aria-hidden="true"></i>
                 <h3>Backend Development</h3>
-                <p>SQL</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>Oracle</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>MySQL</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>SQL Developer</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i></p>
+                <ul class="skill-list">
+                    <li>
+                        <div class="skill-row"><span class="skill-name">SQL</span><span class="skill-level level-strong">Strong</span></div>
+                        <div class="skill-evidence">
+                            <span>Sololearn Introduction to SQL certificate.</span>
+                            <a class="evidence-link" href="#projects" data-filter-link="sql"><span data-project-count="sql">1 project</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">Oracle</span><span class="skill-level level-strong">Strong</span></div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">MySQL</span><span class="skill-level level-working">Working knowledge</span></div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">SQL Developer</span><span class="skill-level level-core">Core strength</span></div>
+                    </li>
+                </ul>
             </div>
+
             <div class="skill-card">
-                <i class="fa-solid fa-paintbrush skill-icon"></i>
+                <i class="fa-solid fa-paintbrush skill-icon" aria-hidden="true"></i>
                 <h3>UI/UX Design</h3>
-                <p>Figma</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
-                <p>Prototyping</p>
-                <p><i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i></p>
+                <ul class="skill-list">
+                    <li>
+                        <div class="skill-row"><span class="skill-name">Figma</span><span class="skill-level level-working">Working knowledge</span></div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">Prototyping</span><span class="skill-level level-strong">Strong</span></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-brain skill-icon" aria-hidden="true"></i>
+                <h3>AI &amp; Data</h3>
+                <ul class="skill-list">
+                    <li>
+                        <div class="skill-row"><span class="skill-name">Machine learning fundamentals</span><span class="skill-level level-developing">Developing</span></div>
+                        <div class="skill-evidence"><span>Course projects: regression by hand and with scikit-learn.</span></div>
+                    </li>
+                    <li>
+                        <div class="skill-row"><span class="skill-name">Deep learning</span><span class="skill-level level-developing">Developing</span></div>
+                        <div class="skill-evidence">
+                            <span>My focus for Honours research.</span>
+                            <a class="evidence-link" href="#research">See research plans <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="section-title">
+            <h2>AI &amp; Research</h2>
+            <p>Where my studies are heading: deep learning, and my Honours research project.</p>
+        </div>
+
+        <div class="research-grid">
+            <article class="honours-card glass-card">
+                <span class="status-pill">Upcoming &middot; BSc Honours</span>
+                <h3>Honours Research Project</h3>
+                <h4>BSc Honours: Computer Science &amp; Information Systems</h4>
+                <p class="research-lede">
+                    I plan to do my Honours research in deep learning. The details of the project will be added
+                    here as the topic is finalised and the work begins.
+                </p>
+
+                <!--
+                    HOW TO UPDATE: replace the text in each <dd> below as your project takes shape
+                    (title, research question, supervisor, approach, results). Remove the
+                    class="tbc" from a <dd> once it contains real information.
+                -->
+                <dl class="research-facts">
+                    <div><dt>Programme</dt><dd>BSc Honours, Computer Science &amp; Information Systems</dd></div>
+                    <div><dt>Research area</dt><dd>Deep learning</dd></div>
+                    <div><dt>Project title</dt><dd class="tbc">To be announced</dd></div>
+                    <div><dt>Research question</dt><dd class="tbc">To be defined with my supervisor</dd></div>
+                    <div><dt>Status</dt><dd>Choosing a topic and supervisor</dd></div>
+                </dl>
+
+                <h4 class="roadmap-title">Project roadmap</h4>
+                <ol class="roadmap">
+                    <li class="done"><strong>Build foundations</strong><span>Python, supervised machine learning projects and an AI-focused Python certificate.</span></li>
+                    <li class="current"><strong>Choose a topic and supervisor</strong><span>Shaping a deep-learning project that is realistic to complete within the Honours year.</span></li>
+                    <li><strong>Literature review and proposal</strong><span>Reading the field and defining the research question.</span></li>
+                    <li><strong>Build, train and evaluate</strong><span>Running experiments and measuring the results.</span></li>
+                    <li><strong>Write-up and presentation</strong><span>Reporting the findings.</span></li>
+                </ol>
+            </article>
+
+            <div class="research-side">
+                <div class="research-panel glass-card">
+                    <h3>Research interests</h3>
+                    <ul class="tech-tags" aria-label="Research interests">
+                        <li>Deep Learning</li>
+                        <li>Neural Networks</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Big Data &amp; Analytics</li>
+                        <li>Automation</li>
+                        <li>IoT</li>
+                        <li>TinyML</li>
+                        <li>Computational Astrophysics</li>
+                    </ul>
+                </div>
+
+                <div class="research-panel glass-card">
+                    <h3>Foundations so far</h3>
+                    <ul class="foundation-list">
+                        <li>
+                            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                            <span>DeepLearning.AI Supervised Machine Learning course projects: regression by hand and with scikit-learn. <a href="#projects">See projects</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+                            <span>Mimo Python AI Developer certificate (2025). <a href="#certifications">See certifications</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chess" aria-hidden="true"></i>
+                            <span>Chess Bot: search and evaluation algorithms in Python. <a href="#featured-projects">See project</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                            <span>Hands-on experience creating AI agents.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -571,7 +888,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Mimo_Logo.png" class="cert-logo">
+                            <img src="Mimo_Logo.png" alt="Mimo logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -587,7 +904,7 @@
                     <div class="cert-footer">
                         <span>2025</span>
 
-                        <a href="Python AI Developer Certificate.pdf" target="_blank">
+                        <a href="Python%20AI%20Developer%20Certificate.pdf" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -598,7 +915,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
+                            <img src="Sololearn_Logo.png" alt="Sololearn logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -614,7 +931,7 @@
                     <div class="cert-footer">
                         <span>2024</span>
 
-                        <a href="https://www.sololearn.com/en/certificates/CC-DHFVQRTP" target="_blank">
+                        <a href="https://www.sololearn.com/en/certificates/CC-DHFVQRTP" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -625,7 +942,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
+                            <img src="Sololearn_Logo.png" alt="Sololearn logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -641,7 +958,7 @@
                     <div class="cert-footer">
                         <span>2024</span>
 
-                        <a href="https://www.sololearn.com/en/certificates/CC-K78DAUNF" target="_blank">
+                        <a href="https://www.sololearn.com/en/certificates/CC-K78DAUNF" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -652,7 +969,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
+                            <img src="Sololearn_Logo.png" alt="Sololearn logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -668,7 +985,7 @@
                     <div class="cert-footer">
                         <span>2025</span>
 
-                        <a href="https://www.sololearn.com/en/certificates/CC-HQ4XM1X5" target="_blank">
+                        <a href="https://www.sololearn.com/en/certificates/CC-HQ4XM1X5" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -679,7 +996,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
+                            <img src="Sololearn_Logo.png" alt="Sololearn logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -695,7 +1012,7 @@
                     <div class="cert-footer">
                         <span>2024</span>
 
-                        <a href="https://www.sololearn.com/en/certificates/CC-PXA6USFV" target="_blank">
+                        <a href="https://www.sololearn.com/en/certificates/CC-PXA6USFV" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -706,7 +1023,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
+                            <img src="Sololearn_Logo.png" alt="Sololearn logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -722,7 +1039,7 @@
                     <div class="cert-footer">
                         <span>2024</span>
 
-                        <a href="https://www.sololearn.com/en/certificates/CC-R9REZPGX" target="_blank">
+                        <a href="https://www.sololearn.com/en/certificates/CC-R9REZPGX" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -733,7 +1050,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
+                            <img src="Sololearn_Logo.png" alt="Sololearn logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -749,7 +1066,7 @@
                     <div class="cert-footer">
                         <span>2024</span>
 
-                        <a href="https://www.sololearn.com/en/certificates/CC-MRLH0WHK" target="_blank">
+                        <a href="https://www.sololearn.com/en/certificates/CC-MRLH0WHK" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -760,7 +1077,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Sololearn_Logo.png" class="cert-logo">
+                            <img src="Sololearn_Logo.png" alt="Sololearn logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -776,7 +1093,7 @@
                     <div class="cert-footer">
                         <span>2024</span>
 
-                        <a href="https://www.sololearn.com/en/certificates/CC-FYXZALTH" target="_blank">
+                        <a href="https://www.sololearn.com/en/certificates/CC-FYXZALTH" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -788,7 +1105,7 @@
         <div class="cert-category">
             <h3 class="category-title">
                 <i class="fa-solid fa-users cert-h3"></i>
-                Collaboration & Project Management
+                Collaboration &amp; Project Management
             </h3>
 
             <div class="certification-grid">
@@ -796,7 +1113,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Atlassian_Logo.png" class="cert-logo">
+                            <img src="Atlassian_Logo.png" alt="Atlassian logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -818,7 +1135,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Atlassian_Logo.png" class="cert-logo">
+                            <img src="Atlassian_Logo.png" alt="Atlassian logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -840,7 +1157,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Slack_Logo.png" class="cert-logo">
+                            <img src="Slack_Logo.png" alt="Slack logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -862,7 +1179,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Slack_Logo.png" class="cert-logo">
+                            <img src="Slack_Logo.png" alt="Slack logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -884,11 +1201,11 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Slack_Logo.png" class="cert-logo">
+                            <img src="Slack_Logo.png" alt="Slack logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
-                            <h3>Etiquette & Productivity</h3>
+                            <h3>Etiquette &amp; Productivity</h3>
                             <h4>Slack</h4>
                         </div>
                     </div>
@@ -906,7 +1223,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Slack_Logo.png" class="cert-logo">
+                            <img src="Slack_Logo.png" alt="Slack logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -929,7 +1246,7 @@
         <div class="cert-category">
             <h3 class="category-title">
                 <i class="fa-solid fa-chart-line cert-h3"></i>
-                Business & Marketing
+                Business &amp; Marketing
             </h3>
 
             <div class="certification-grid">
@@ -937,7 +1254,7 @@
                     <div class="cert-header">
 
                         <div class="cert-icon">
-                            <img src="Google_Logo.png" class="cert-logo">
+                            <img src="Google_Logo.png" alt="Google logo" class="cert-logo" loading="lazy" decoding="async" width="55" height="55">
                         </div>
 
                         <div>
@@ -953,7 +1270,7 @@
                     <div class="cert-footer">
                         <span>2021</span>
 
-                        <a href="The Fundamentals of Digital Marketing Certificate.pdf" target="_blank">
+                        <a href="The%20Fundamentals%20of%20Digital%20Marketing%20Certificate.pdf" target="_blank" rel="noopener noreferrer">
                             View Credential
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
@@ -972,42 +1289,59 @@
         </div>
 
         <div class="testimonial-slider">
-            <div class="testimonial-card glass-card">
+            <article class="testimonial-card glass-card">
                 <div class="quote">
-                    <i class="fa-solid fa-quote-left"></i>
+                    <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
                 </div>
-                <p>
-                    I had the privilege of witnessing Daniel Charles's remarkable journey at 1.3 Creative, where his blend of technical prowess and exceptional interpersonal skills left an indelible mark. Daniel joined our digital design agency and HubSpot Solution Partner with a basic understanding of IT, and within just over two years, he metamorphosed into our cornerstone for resolving complex technical challenges and mastering abstract concepts. His journey from a novice to an expert in critical technologies and methodologies is a testament to his dedication and capability.
 
-                    Daniel's technical acumen spans a broad array of platforms and tools, including but not limited to HubSpot, Confluence, Jira, Jira Service Management, WordPress, WooCommerce, Elementor, Google Sheets, and Slack. His expertise is not just theoretical; Daniel holds certifications in HubSpot, Google, Jira, Confluence, and Slack, which he applied with finesse to drive our projects to success. His role was pivotal in managing vast sections of our enterprise application stack, particularly distinguishing himself as the go-to expert for HubSpot-related endeavours.
+                <blockquote class="pull-quote">
+                    &ldquo;&hellip;within just over two years, he metamorphosed into our cornerstone for resolving complex
+                    technical challenges and mastering abstract concepts&hellip; particularly distinguishing himself as
+                    the go-to expert for HubSpot-related endeavours.&rdquo;
+                </blockquote>
 
-                    Beyond his technical skills, Daniel excelled in customer engagement, offering deep insights and guidance during the discovery phase with our clients, and demonstrating remarkable diligence and collaboration in the build phase. His ability to work harmoniously with colleagues under the Agile methodology significantly enhanced our project executions and outcomes.
+                <ul class="tech-tags" aria-label="Highlights from the recommendation">
+                    <li>HubSpot go-to expert</li>
+                    <li>Client discovery</li>
+                    <li>Agile teamwork</li>
+                    <li>Punctual &amp; reliable</li>
+                </ul>
 
-                    Daniel is not only a technically proficient professional but also a person of great character—polite, accommodating, punctual, and diligent. He communicates with clarity and purpose, embodying a consultative approach that combines attentive listening with insightful advice. His strong work ethic, reliability, and the respect he garnered from his peers made him an invaluable asset to our team.
-
-                    The significant void Daniel leaves in our organization speaks volumes of his impact. His contributions have been pivotal to our success, setting a high standard for excellence and teamwork. As we bid him farewell, we do so with best wishes for his future endeavours and with the hope of future collaboration.
-
-                    For any organization looking to enrich their team with a dedicated, innovative, and highly skilled professional who brings a wealth of technical expertise, customer-focused insights, and a proven track record of working effectively under Agile methodologies, Daniel Charles comes with my highest recommendation.
-                </p>
+                <details class="recommendation">
+                    <summary>Read the full recommendation</summary>
+                    <div class="recommendation-body">
+                        <p>I had the privilege of witnessing Daniel Charles's remarkable journey at 1.3 Creative, where his blend of technical prowess and exceptional interpersonal skills left an indelible mark. Daniel joined our digital design agency and HubSpot Solution Partner with a basic understanding of IT, and within just over two years, he metamorphosed into our cornerstone for resolving complex technical challenges and mastering abstract concepts. His journey from a novice to an expert in critical technologies and methodologies is a testament to his dedication and capability.</p>
+                        <p>Daniel's technical acumen spans a broad array of platforms and tools, including but not limited to HubSpot, Confluence, Jira, Jira Service Management, WordPress, WooCommerce, Elementor, Google Sheets, and Slack. His expertise is not just theoretical; Daniel holds certifications in HubSpot, Google, Jira, Confluence, and Slack, which he applied with finesse to drive our projects to success. His role was pivotal in managing vast sections of our enterprise application stack, particularly distinguishing himself as the go-to expert for HubSpot-related endeavours.</p>
+                        <p>Beyond his technical skills, Daniel excelled in customer engagement, offering deep insights and guidance during the discovery phase with our clients, and demonstrating remarkable diligence and collaboration in the build phase. His ability to work harmoniously with colleagues under the Agile methodology significantly enhanced our project executions and outcomes.</p>
+                        <p>Daniel is not only a technically proficient professional but also a person of great character—polite, accommodating, punctual, and diligent. He communicates with clarity and purpose, embodying a consultative approach that combines attentive listening with insightful advice. His strong work ethic, reliability, and the respect he garnered from his peers made him an invaluable asset to our team.</p>
+                        <p>The significant void Daniel leaves in our organization speaks volumes of his impact. His contributions have been pivotal to our success, setting a high standard for excellence and teamwork. As we bid him farewell, we do so with best wishes for his future endeavours and with the hope of future collaboration.</p>
+                        <p>For any organization looking to enrich their team with a dedicated, innovative, and highly skilled professional who brings a wealth of technical expertise, customer-focused insights, and a proven track record of working effectively under Agile methodologies, Daniel Charles comes with my highest recommendation.</p>
+                    </div>
+                </details>
 
                 <div class="testimonial-author">
-                    <a href="https://www.linkedin.com/in/elliot-charles-uk/">
-                        <img src="Elliot Charles Profile Picture.jpg" alt="Employer">
+                    <a href="https://www.linkedin.com/in/elliot-charles-uk/" target="_blank" rel="noopener noreferrer">
+                        <img src="Elliot%20Charles%20Profile%20Picture.jpg" alt="Elliot Charles" loading="lazy" decoding="async" width="65" height="65">
                     </a>
                     <div>
                         <h4>Elliot Charles</h4>
-                        <span>Programme Manager & Senior Business Analyst</span>
+                        <span>Programme Manager &amp; Senior Business Analyst, 1.3 Creative</span>
                     </div>
                 </div>
-            </div>
+
+                <p class="disclosure">
+                    <strong>Transparency note:</strong> Elliot is my uncle, and 1.3 Creative is his company, where I worked.
+                    The full recommendation above is reproduced unedited.
+                </p>
+            </article>
         </div>
     </section>
 
-
-   <section id="github_dashboard" class="github_dashboard">
+    <!-- GitHub Dashboard -->
+    <section id="github_dashboard" class="github_dashboard">
         <div class="section-title">
             <h2>
-                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
                 GitHub Activity
             </h2>
 
@@ -1016,28 +1350,36 @@
             </p>
         </div>
 
+        <!-- Shown only if the GitHub API can't be reached (e.g. rate limit) -->
+        <div id="github-error" class="github-error glass-card is-hidden" role="status">
+            <p>
+                Live GitHub data couldn't be loaded right now.
+                <a href="https://github.com/DanielCharles11599" target="_blank" rel="noopener noreferrer">View my profile on GitHub</a> instead.
+            </p>
+        </div>
+
         <!-- Profile -->
-        <div class="github-profile glass-card">
-            <img id="github-avatar">
+        <div class="github-profile glass-card" id="github-profile-card">
+            <img id="github-avatar" alt="GitHub profile picture" width="140" height="140">
             <div>
-                <h3 id="github-name"></h3>
+                <h3 id="github-name">Loading&hellip;</h3>
                 <p id="github-bio"></p>
                 <div class="github-meta">
                     <span>
-                        <i class="fa-solid fa-book"></i>
-                        <span id="repo-count"></span>
+                        <i class="fa-solid fa-book" aria-hidden="true"></i>
+                        <span id="repo-count">-</span>
                         Repositories
                     </span>
 
                     <span>
-                        <i class="fa-solid fa-user-group"></i>
-                        <span id="followers"></span>
+                        <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                        <span id="followers">-</span>
                         Followers
                     </span>
 
                     <span>
-                        <i class="fa-solid fa-user-plus"></i>
-                        <span id="following"></span>
+                        <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                        <span id="following">-</span>
                         Following
                     </span>
                 </div>
@@ -1045,58 +1387,80 @@
         </div>
 
         <!-- Heatmap -->
-        <div class="heatmap glass-card">
-            <img id="heatmap" alt="Contribution Graph">
+        <div class="heatmap glass-card" id="github-heatmap-card">
+            <img id="heatmap" alt="GitHub contribution graph for DanielCharles11599" loading="lazy">
         </div>
 
-        <!-- Statistics -->
-        <div class="github-stats-grid">
+        <!-- Statistics (calculated from the repositories, so nothing repeats the profile card) -->
+        <div class="github-stats-grid" id="github-stats">
             <div class="stat-card glass-card">
-                <h3 id="public-repos"></h3>
-                <p>Repositories</p>
+                <h3 id="stat-stars">-</h3>
+                <p>Total stars</p>
             </div>
 
             <div class="stat-card glass-card">
-                <h3 id="public-gists"></h3>
-                <p>Gists</p>
+                <h3 id="stat-languages">-</h3>
+                <p>Languages used</p>
             </div>
 
             <div class="stat-card glass-card">
-                <h3 id="followers-stat"></h3>
-                <p>Followers</p>
+                <h3 id="stat-top-language" class="stat-small">-</h3>
+                <p>Most-used language</p>
             </div>
 
             <div class="stat-card glass-card">
-                <h3 id="following-stat"></h3>
-                <p>Following</p>
+                <h3 id="stat-last-push" class="stat-small">-</h3>
+                <p>Last pushed</p>
             </div>
         </div>
 
         <!-- Recent repositories -->
-        <div>
+        <div id="github-recent">
             <h3 class="category-title">
                 Recent Repositories
             </h3>
 
-            <div
-                id="repository-grid"
-                class="repository-grid">
-            </div>
+            <div id="repository-grid" class="repository-grid"></div>
         </div>
     </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title">
+            <h2>Get in Touch</h2>
+            <p>
+                Whether you'd like to talk about a role, a project or my research plans, I'd love to hear from you.
+            </p>
+        </div>
+
+        <div class="contact-actions">
+            <!-- To add an email button, uncomment this line and replace the address:
+            <a href="mailto:your.email@example.com" class="button"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email me</a>
+            -->
+            <a href="https://www.linkedin.com/in/daniel-charles-30a1a3217/" class="button" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> Connect on LinkedIn</a>
+            <a href="https://github.com/DanielCharles11599" class="button secondary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <a href="Daniel_Charles_Resume.pdf" class="button secondary"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Download Resume</a>
+        </div>
+    </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Daniel Charles. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://github.com/DanielCharles11599"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/daniel-charles-30a1a3217/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/DanielCharles11599" aria-label="Daniel Charles on GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/daniel-charles-30a1a3217/" aria-label="Daniel Charles on LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
         </div>
     </footer>
 
-    <div class="cursor-glow"></div>
+    <button class="back-to-top" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <!-- link to javascript file -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
