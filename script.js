@@ -290,7 +290,7 @@ document.querySelectorAll("[data-filter-link]").forEach(link => {
 /* ==========================================================================
    Hero stats count-up (values come from the page itself where possible)
    ========================================================================== */
-const statEls = Array.from(document.querySelectorAll(".hero-stat strong"));
+const statEls = Array.from(document.querySelectorAll("[data-count]"));
 
 statEls.forEach(el => {
     if (el.dataset.stat === "projects") el.dataset.count = projectCards.length;
@@ -339,36 +339,36 @@ if (statEls.length) {
 
 
 /* ==========================================================================
-   GitHub dashboard (one cached request pair, with a graceful fallback)
+   GitHub dashboard
+   - the two requests are independent, so one failing never blanks the other
+   - results are cached in localStorage; if GitHub's hourly limit (60 requests per
+     IP for anonymous visitors) is hit, the last saved data is shown instead
    ========================================================================== */
 const GITHUB_USER = "DanielCharles11599";
-const GITHUB_CACHE_KEY = "githubCache.v1";
-const GITHUB_CACHE_MS = 10 * 60 * 1000;   // the unauthenticated API only allows 60 requests/hour
+const GITHUB_CACHE_KEY = "githubCache.v2";
+const GITHUB_FRESH_MS = 15 * 60 * 1000;            // reuse for 15 minutes without asking GitHub
+const GITHUB_STALE_MS = 7 * 24 * 60 * 60 * 1000;   // fall back to saved data for up to a week
 
 function readGithubCache() {
     try {
-        const cached = JSON.parse(storage.get(GITHUB_CACHE_KEY, sessionStorage));
-        if (cached && Date.now() - cached.time < GITHUB_CACHE_MS) return cached.data;
+        const cached = JSON.parse(storage.get(GITHUB_CACHE_KEY));
+        if (cached && cached.time && Date.now() - cached.time < GITHUB_STALE_MS) return cached;
     } catch (e) { /* ignore */ }
     return null;
 }
 
-async function fetchGithub() {
-    const cached = readGithubCache();
-    if (cached) return cached;
+function writeGithubCache(user, repos) {
+    storage.set(GITHUB_CACHE_KEY, JSON.stringify({ time: Date.now(), user, repos }));
+}
 
-    const [userResponse, repoResponse] = await Promise.all([
-        fetch(`https://api.github.com/users/${GITHUB_USER}`),
-        fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=pushed`)
-    ]);
-
-    if (!userResponse.ok || !repoResponse.ok) {
-        throw new Error(`GitHub API responded ${userResponse.status}/${repoResponse.status}`);
+async function githubJSON(url) {
+    const response = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
+    if (!response.ok) {
+        const error = new Error(`GitHub responded ${response.status}`);
+        error.status = response.status;
+        throw error;
     }
-
-    const data = { user: await userResponse.json(), repos: await repoResponse.json() };
-    storage.set(GITHUB_CACHE_KEY, JSON.stringify({ time: Date.now(), data }), sessionStorage);
-    return data;
+    return response.json();
 }
 
 function setText(id, value) {
@@ -383,13 +383,47 @@ function makeEl(tag, className, text) {
     return el;
 }
 
-function metaItem(iconClass, label, value) {
-    const item = makeEl("span");
-    const icon = makeEl("i", iconClass);
-    icon.setAttribute("aria-hidden", "true");
-    item.append(icon, `${value}`);
-    item.title = label;
-    return item;
+function renderGithubProfile(user, repos) {
+    const avatar = document.getElementById("github-avatar");
+    if (avatar && user.avatar_url) avatar.src = user.avatar_url;
+
+    setText("github-name", user.name || user.login || "Daniel Charles");
+
+    const bio = document.getElementById("github-bio");
+    if (bio) {
+        bio.textContent = user.bio || "";
+        bio.classList.toggle("is-hidden", !user.bio);
+    }
+
+    setText("stat-repos", user.public_repos ?? "-");
+    setText("stat-gists", user.public_gists ?? "-");
+    setText("stat-followers", user.followers ?? "-");
+    setText("stat-following", user.following ?? "-");
+
+    // A few highlights worked out from the repositories
+    const highlights = document.getElementById("github-highlights");
+    if (highlights && Array.isArray(repos)) {
+        highlights.textContent = "";
+        const own = repos.filter(repo => !repo.fork);
+        const counts = {};
+        let stars = 0;
+        own.forEach(repo => {
+            stars += repo.stargazers_count || 0;
+            if (repo.language) counts[repo.language] = (counts[repo.language] || 0) + 1;
+        });
+        const top = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
+        const latest = own
+            .map(repo => new Date(repo.pushed_at))
+            .sort((a, b) => b - a)[0];
+
+        const items = [];
+        if (top) items.push(`Top language: ${top}`);
+        items.push(`${stars} star${stars !== 1 ? "s" : ""} earned`);
+        if (latest && !isNaN(latest)) {
+            items.push(`Last pushed ${latest.toLocaleDateString("en-ZA", { month: "short", year: "numeric" })}`);
+        }
+        items.forEach(text => highlights.append(makeEl("li", "", text)));
+    }
 }
 
 function renderRepositories(repos) {
@@ -397,75 +431,43 @@ function renderRepositories(repos) {
     if (!grid) return;
     grid.textContent = "";
 
-    repos.slice(0, 6).forEach(repo => {
-        const card = makeEl("div", "repository-card glass-card");
-
-        card.append(makeEl("h4", "", repo.name));
-        card.append(makeEl("p", "", repo.description || "No description available."));
-
-        const meta = makeEl("div", "repo-meta");
-        if (repo.language) meta.append(metaItem("fa-solid fa-code", "Main language", repo.language));
-        meta.append(metaItem("fa-solid fa-star", "Stars", repo.stargazers_count));
-        meta.append(metaItem("fa-solid fa-code-fork", "Forks", repo.forks_count));
-        card.append(meta);
-
-        const link = makeEl("a", "", "View Repository ");
-        link.href = repo.html_url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        const arrow = makeEl("i", "fa-solid fa-arrow-up-right-from-square");
-        arrow.setAttribute("aria-hidden", "true");
-        link.append(arrow);
-        card.append(link);
-
-        grid.append(card);
-    });
-}
-
-function renderGithub(user, allRepos) {
-    const avatar = document.getElementById("github-avatar");
-    if (avatar && user.avatar_url) {
-        avatar.src = user.avatar_url;
-        avatar.alt = `${user.name || user.login} GitHub profile picture`;
-    }
-
-    setText("github-name", user.name || user.login);
-    setText("github-bio", user.bio || "");
-    setText("repo-count", user.public_repos);
-    setText("followers", user.followers);
-    setText("following", user.following);
-
-    // Stats are calculated from the repositories so they don't repeat the profile card
-    const repos = allRepos
+    repos
         .filter(repo => !repo.fork)
-        .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+        .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
+        .slice(0, 6)
+        .forEach(repo => {
+            const card = makeEl("div", "repository-card glass-card");
 
-    const languageCounts = {};
-    let stars = 0;
-    repos.forEach(repo => {
-        stars += repo.stargazers_count || 0;
-        if (repo.language) languageCounts[repo.language] = (languageCounts[repo.language] || 0) + 1;
-    });
+            card.append(makeEl("h4", "", repo.name));
+            card.append(makeEl("p", "", repo.description || "No description available."));
+            card.append(makeEl("p", "repo-meta",
+                `\u2B50 ${repo.stargazers_count}\u00A0\u00A0\uD83C\uDF74 ${repo.forks_count}` +
+                (repo.language ? `\u00A0\u00A0\u2022\u00A0\u00A0${repo.language}` : "")));
 
-    const languages = Object.keys(languageCounts).sort((a, b) => languageCounts[b] - languageCounts[a]);
+            const link = makeEl("a", "", "View Repository ");
+            link.href = repo.html_url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            const arrow = makeEl("i", "fa-solid fa-arrow-up-right-from-square");
+            arrow.setAttribute("aria-hidden", "true");
+            link.append(arrow);
+            card.append(link);
 
-    setText("stat-stars", stars);
-    setText("stat-languages", languages.length);
-    setText("stat-top-language", languages[0] || "-");
-    setText("stat-last-push", repos[0]
-        ? new Date(repos[0].pushed_at).toLocaleDateString("en-ZA", { month: "short", year: "numeric" })
-        : "-");
-
-    renderRepositories(repos);
+            grid.append(card);
+        });
 }
 
-function showGithubError() {
-    ["github-profile-card", "github-stats", "github-recent"].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.add("is-hidden");
-    });
-    const error = document.getElementById("github-error");
-    if (error) error.classList.remove("is-hidden");
+function showGithubNotice(message) {
+    const notice = document.getElementById("github-notice");
+    if (!notice) return;
+    notice.textContent = "";
+    notice.append(message + " ");
+    const link = makeEl("a", "", "View my profile on GitHub");
+    link.href = `https://github.com/${GITHUB_USER}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    notice.append(link, ".");
+    notice.classList.remove("is-hidden");
 }
 
 async function loadGithub() {
@@ -479,13 +481,55 @@ async function loadGithub() {
         heatmap.src = `https://ghchart.rshah.org/${GITHUB_USER}`;
     }
 
-    try {
-        const { user, repos } = await fetchGithub();
-        renderGithub(user, repos);
-    } catch (error) {
-        console.warn("GitHub data unavailable:", error.message);
-        showGithubError();
+    const cached = readGithubCache();
+
+    // Recent enough: no need to ask GitHub again
+    if (cached && Date.now() - cached.time < GITHUB_FRESH_MS && cached.user && Array.isArray(cached.repos)) {
+        renderGithubProfile(cached.user, cached.repos);
+        renderRepositories(cached.repos);
+        return;
     }
+
+    const [userResult, repoResult] = await Promise.allSettled([
+        githubJSON(`https://api.github.com/users/${GITHUB_USER}`),
+        githubJSON(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=pushed`)
+    ]);
+
+    const freshUser = userResult.status === "fulfilled" ? userResult.value : null;
+    const freshRepos = repoResult.status === "fulfilled" && Array.isArray(repoResult.value) ? repoResult.value : null;
+
+    const user = freshUser || (cached && cached.user) || null;
+    const repos = freshRepos || (cached && cached.repos) || null;
+
+    if (user) renderGithubProfile(user, repos);
+    if (repos) renderRepositories(repos);
+
+    if (freshUser && freshRepos) {
+        writeGithubCache(freshUser, freshRepos);
+        return;
+    }
+
+    // Something failed: explain why, and say what is being shown instead
+    const failure = [userResult, repoResult].find(r => r.status === "rejected");
+    const rateLimited = failure && (failure.reason.status === 403 || failure.reason.status === 429);
+    console.warn("GitHub data unavailable:", failure ? failure.reason.message : "unexpected response");
+
+    const reason = rateLimited
+        ? "GitHub's hourly request limit was reached, so live numbers are paused for a while."
+        : "Live GitHub data couldn't be loaded right now.";
+    const shown = user && repos
+        ? "Showing my last saved data."
+        : "";
+
+    if (!repos) {
+        const recent = document.getElementById("github-recent");
+        if (recent) recent.classList.add("is-hidden");
+    }
+    if (!user) {
+        const stats = document.getElementById("github-stats");
+        if (stats) stats.classList.add("is-hidden");
+    }
+    showGithubNotice(`${reason} ${shown}`.trim());
 }
 
 loadGithub();
